@@ -1,0 +1,86 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > #mainDiv {
+        animation:entrarLogo 1s linear;
+        > h1 {
+            font-family: 'MontSerrat';
+            font-size: 3.2em;
+        }
+        > #projects {
+            margin: 10px 0px;
+            background-color: #333;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            > p {
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+    .project {
+        height: 20px;
+        padding: 10px;
+        width:  200px;
+        margin: 5px 0px;
+        border-radius: 4px;
+        border: 1px solid #666;
+        color: black;
+        transition: all .2s;
+        animation: none;
+        animation: fadeInLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        > a {
+            text-decoration: none;
+            font-weight: bold;
+            color: inherit;
+            &:visited{
+                color: inherit;
+            }
+        }
+        &:hover{
+            background-color: #333;
+            color: white;
+            transition: all .2s;
+        }
+        &:nth-child(2n + 1){
+            animation: fadeInRight 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    }
+}
+
+@keyframes entrarLogo {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

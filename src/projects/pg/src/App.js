@@ -82,9 +82,9 @@ class GitHubApp extends Component {
     return (
             <div className="App"> 
                   <Switch>
-                      <Route exact path="/" render={() => <Profile state={this.state}  handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
+                      <Route path="/projects/git_app/home" render={() => <Profile state={this.state}  handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
                   } />
-                      <Route exact path="/repos" render={() => <Repos state={this.state} name={this.state.user.name} handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
+                      <Route exact={true} path="/projects/git_app/repos" render={() => <Repos state={this.state} name={this.state.user.name} handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
                   } />
                   </Switch>
             </div>
