@@ -1,3 +1,33 @@
+//variaveis
+
+$green: #25b36cf8;
+$red: #e93e20f8;
+$blue: #1fb2ccf8;
+$cinza_claro: #f1f1f1;
+$branco: #fff;
+
+@keyframes encaixar {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+input, button {
+    outline: none;
+    border: none;
+}
 .App-header {
     display: flex;
     justify-content: center;
@@ -7,62 +37,123 @@
     width: 100vw;
     text-align: center;
     #container {
-        max-width: 500px;
-        .btn {
-            border: none;
-            outline: none;
-            background-color: transparent;
-            border: 1px solid black;
-            border-radius: 5px;
-            max-width: 100%;
-            width: 150px;
-            height: 40px;
-            margin: 0px 5px;
-        }
-        .tarefa {
-            animation: entrar .3s linear;
-            width: 100%;
-            margin: 10px 0px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: red;
-            border-radius: 4px;
-            color: white;
-        }
-        .tarefaC {
-            background-color:green!important;
-        }
+        border-radius: 4px;
+        width: 500px;
+        box-shadow: 0px 0px 5px rgba(34, 34, 34, 0.1);
         > form {
+            border-radius: inherit;
+            background-color: #08323ff8;
+            > h1 {
+                font-weight: bold;
+                font-size: 22px;
+                color: white;
+                padding: 10px;
+            }
             > div {
+                display: flex;
+                justify-content: space-between;
                 > input {
-                    border: none;
-                    outline: none;
-                    padding: 20px;
-                    border: 1px solid lightcoral;
+                    width: 100%;
+                    height: 30px;
+                    padding: 0px 5px;
+                    &::placeholder{
+                        font-weight: bold;
+                    }
                 }
                 > button {
-                    height: 50px;
-                    width: 100px;
+                    height: 30px;
+                    width: 50px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-shadow: 2px 0px 0px rgba(34, 34, 34, 0.1);
                     border: none;
                     outline: none;
                     color: white;
-                    background-color: lightcoral;
-                    border-radius: 5px;
+                    background-color:$green;
                 }
+            }
+        }
+         .todo_list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $cinza_claro;
+            padding: 20px;
+            animation: encaixar .3s  ease-in-out;
+            color: #333;
+            &:nth-child(2n + 1){
+                background-color: $branco;
+            }
+            > li {
+                width: 73%;
+                list-style-type: none;
+                font-weight: bold;
+                font-size: 20px;
+                color: inherit;
+                word-break: break-word;
+                text-align: left;
+            }
+            > .action_buttons {
+                display: flex;
+                justify-content: space-around;
+                width:25%;
+                > button {
+                    height: 30px;
+                    width: 35px;
+                    border-radius: 4px;
+                    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+                    &:nth-child(1){
+                        background-color: $green;
+                    }
+                    &:nth-child(2){
+                        background-color: $blue;
+                    }
+                    &:nth-child(3){
+                        background-color: $red;
+                    }
+                    > i {
+                        color: white;
+                    }
+                }
+            }
+        }
+        .btnUndo {
+            height: 30px;
+            width: 35px;
+            border-radius: 4px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            background-color: $red;
+            > i {
+                color: white;
+            }
+        }
+        .complete {
+            background-color: $green!important;
+            color: white;
+            padding: 10px;
+            > li {
+                font-size: 14px;
+            }
+        }
+        > .div_complete {
+            border-radius: inherit;
+            background-color: #08323ff8;
+            animation: encaixar .3s  ease-in-out;
+            margin: 40px 0px 0px;
+            > h2 {
+                font-weight: bold;
+                font-size: 22px;
+                color: white;
+                padding: 10px;
             }
         }
     }
 }
-
 @keyframes entrar{
     0% {
         opacity: 0;
-        transform: translateX(-50px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0px)
     }
 }

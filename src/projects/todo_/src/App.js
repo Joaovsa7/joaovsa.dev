@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
 import './app.scss'
+import SimpleStorage from "react-simple-storage";
 
 class App extends Component {
   constructor(props){
@@ -12,10 +12,10 @@ class App extends Component {
       tarefasCompletas: [],
     }
   }
-  
-  criarTarefa() {
+
+  criarTarefa(){
     if(this.state.todoValue === ""){
-      return alert('Voce precisa colocar algo');
+      return  new console.error('Voce precisa colocar algo');
     }
     let data = new Date()
     let diaDaSemana = data.getTimezoneOffset();
@@ -27,7 +27,7 @@ class App extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    if (e.keyCode == 13) return this.sendData()
+    if (e.keyCode === 13) return this.sendData()
     this.setState({todoValue: ""})
   }
   
@@ -45,85 +45,94 @@ class App extends Component {
     }))
   }
   
-  handleChange = (event) => {
+  quandoMudar = (event) => {
     const target = event.target
     const name = target.name
     this.setState({[name]: event.target.value})
-    console.log(name)
   }
   removeTarefa = id => {
     this.setState(state => {
-      const listaDeTarefas = state.listaDeTarefas.filter(item => item.id != id);
+      const listaDeTarefas = state.listaDeTarefas.filter(item => item.id !== id);
       return {
         listaDeTarefas
       }
     })}
 
-    editTarefaObject(id){
-      const item = Object.assign({}, this.state.listaDeTarefas[id], {editTarefa:true});
-       this.state.listaDeTarefas[id] = item;
-       this.setState({listaDeTarefas: this.state.listaDeTarefas, editTarefa: ''});
+    habilitarEdicao(id){
+      const lista = this.state.listaDeTarefas
+      const item = Object.assign({}, lista[id], {editTarefa:true});
+      lista[id] = item;
+       this.setState({listaDeTarefas: lista});
      }
-    editTarefa(id, name){
+     
+    editarAtarefa(id, name){
       const lista = this.state.listaDeTarefas;
       if(name === ""){
         throw console.error('a');
       }
-      lista[id] = {id: id, nome: name};
+      const newValue = {id: id, nome: name}
+      lista[id] = newValue;
       this.setState({lista: lista, editValue: ''})
+      localStorage.setItem("tarefa", lista)
     }
 
     render() {
 
       return (
         <div className="App">
+          <SimpleStorage parent={this} />
         <header className="App-header">
         <div id="container">
         <form onSubmit={this.onSubmit}>
+          <h1>Tarefas</h1>
             <div>
-                  <h4>insira uma nova tarefa</h4>
-            <input type="text"  name="todoValue" value={this.state.todoValue} onChange={this.handleChange} placeholder="Nome da tarefa" />
-            <button type="submit"   onClick={() => this.criarTarefa()}>Enviar</button>
+              <input type="text"  name="todoValue" value={this.state.todoValue} onChange={this.quandoMudar} placeholder="Adicione a sua tarefa" />
+              <button type="submit"   onClick={() => this.criarTarefa()}>+</button>
             </div>
         </form>
-        <h4>Tarefas pendentes</h4>
         {
           this.state.listaDeTarefas.length > 0 ? (this.state.listaDeTarefas.map((tarefa, index) => (
-            <div id="todo_list">
+            <div className="todo_list">
             <li key={tarefa.id} class="tarefa">
-            {tarefa.nome}
+            {tarefa.editTarefa === true ? (
+            <Fragment>
+            <input type="text" name="editValue" value={this.state.editValue} onChange={this.quandoMudar}  placeholder="Edite a tarefa" />
+            <button  class="btn" onClick={() => this.editarAtarefa(index, this.state.editValue)}>Editar tarefa</button>
+          </Fragment>
+            ) :   tarefa.nome 
+            
+             }
+         
             </li>
-            <button  class="btn" onClick={() => this.removeTarefa(tarefa.id)}>Apagar Tarefa</button>
-            <button  class="btn" onClick={() => this.tarefaCompletada(tarefa)}>Marcar como completa</button>
-            <button  class="btn" onClick={() => this.editTarefaObject(index)}>Editar tarefa</button>
-            {console.table(tarefa)}
-            { tarefa.editTarefa === true && (
-              <div>
-                <input type="text" name="editValue" value={this.state.editValue} onChange={this.handleChange} defaultValue="" placeholder="Nome da tarefa" />
-                <button  class="btn" onClick={() => this.editTarefa(index, this.state.editValue)}>Editar tarefa</button>
-            </div>
-            )
-            
-            }
-            
+            <div className="action_buttons">
+              <button  class="btn" onClick={() => this.tarefaCompletada(tarefa)}><i class="fas fa-check"></i></button>
+              <button  class="btn" onClick={() => this.habilitarEdicao(index)}><i class="fas fa-pencil-alt"></i></button>
+              <button  class="btn" onClick={() => this.removeTarefa(tarefa.id)}><i class="fas fa-trash"></i></button>
+            </div>            
             </div>
             
-            ))) : <div>Sem tarefas no momento </div>
+            ))) : <p>Você ainda não tem nenhuma tarefa pendente!</p>
           }
-          <h4>{this.state.tarefasCompletas.length ? `Tarefas concluidas ${this.state.tarefasCompletas.length}` : "Você não concluiu nenhuma tarefa"}</h4>
-          {
-            this.state.tarefasCompletas.map(tarefa => (
-              <div>
-              <li key={tarefa.id} class="tarefa tarefaC">
-              {tarefa.nome}
-              </li>
-              <button class="btn"  class="btn" onClick={() => this.backToList(tarefa)}>Desfazer</button>
-              </div>
-              
-              ))
-            }
+          {this.state.tarefasCompletas.length >= 1 && 
+                    <div className="div_complete">
+                    <h2>Tarefas concluidas</h2>
+              {
+                this.state.tarefasCompletas.map(tarefa => (
+               
+                    <div className="todo_list complete">
+                  <li key={tarefa.id}>
+                  {tarefa.nome}
+                  </li>
+                  <button className="btnUndo" onClick={() => this.backToList(tarefa)}><i class="fas fa-trash-restore-alt"></i></button>
+                  </div>
+                  ))
+                
+                }
+                              </div> 
+          
+          }
+   
         </div>
-      
             </header>
             </div>
             );
