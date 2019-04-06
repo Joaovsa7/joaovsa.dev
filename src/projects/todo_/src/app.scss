@@ -40,6 +40,10 @@ input, button {
         border-radius: 4px;
         width: 500px;
         box-shadow: 0px 0px 5px rgba(34, 34, 34, 0.1);
+        @media screen and (max-width: 768px){
+            width: 95vw;
+            margin: 0 auto;
+        }
         > form {
             border-radius: inherit;
             background-color: #08323ff8;
