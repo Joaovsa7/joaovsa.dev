@@ -20,7 +20,7 @@ class TodoApp extends Component {
     this.quandoMudar = this.quandoMudar.bind(this)
   }
 
-  criarTarefa(){
+  criarTarefa = () => {
     if(this.state.todoValue === ""){
       throw alert('digite algo')
     }
@@ -71,22 +71,21 @@ class TodoApp extends Component {
       }
     })}
 
-    habilitarEdicao(id){
+    habilitarEdicao(tarefa, id){
       const lista = this.state.listaDeTarefas
-      const item = Object.assign({}, lista[id], {editTarefa:true});
+      const item = Object.assign({}, lista[id],{ editTarefa: !tarefa.editTarefa });
       lista[id] = item;
-       this.setState({listaDeTarefas: lista, editValue: ''});
+      this.setState({listaDeTarefas: lista, editValue: ''})
      }
      
     editarAtarefa(id, name){
       const lista = this.state.listaDeTarefas;
       if(name === ""){
-        throw alert('digite algo')
+        throw alert('O nome da nova tarefa')
       }
-      const newValue = {id: id, nome: name}
+      const newValue = {id: id, nome: name, editTarefa: false}
       lista[id] = newValue;
-      this.setState({lista: lista, editValue: ''})
-      localStorage.setItem("tarefa", lista)
+      this.setState({listaDeTarefas: lista, editValue: ''})
     }
 
     render() {

@@ -19,7 +19,7 @@ const Tarefas = (props) => {
                                     </li>
                                     <div className="action_buttons">
                                         <button  className="btnIcon" onClick={() => props.tarefaCompleta(tarefa)}><i className="fas fa-check"></i></button>
-                                        <button  className="btnIcon" onClick={() => props.habilitar(index)}><i className="fas fa-pencil-alt"></i></button>
+                                        <button  className="btnIcon" onClick={() => props.habilitar(tarefa, index)}><i className={`${tarefa.editTarefa === false ? 'fas fa-pencil-alt' : 'fas fa-times'}`}></i></button>
                                         <button  className="btnIcon" onClick={() => props.remover(tarefa.id)}><i className="fas fa-trash"></i></button>
                                     </div> 
                                 </div> 
