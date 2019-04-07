@@ -8,17 +8,28 @@ export default class Home extends Component {
             <div className="container">
                 <div id="mainDiv">
                     <h1>joaovsa.</h1>
-                    <p>Coming soon</p>
+                    <p>Em breve</p>
                     <div id="projects">
-                        <p>Veja alguns projetos.</p>
+                        <p>Enquanto isso, veja meu portfolio abaixo.</p>
                     </div>
                 </div>
+                <div className="project">
+                    <Link to="/projects/git_app/home">Github - consumindo API</Link>
+                </div>
+                <div className="project">
+                    <Link to="/projects/todo_/home">Lista de Tarefas - APP</Link>
+                </div>
+                <p>Redes sociais</p>
+                <div className="social">
                     <div className="project">
-                        <Link to="/projects/git_app/home">Github api</Link>
+                        <a href="http://www.linkedin.com/in/jvsa7" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                     <div className="project">
-                        <Link to="/projects/todo_/home">Todo_list (em construção)</Link>
+                        <a href="http://www.github.com/joaovsa7" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
+                </div>
             </div>
         )
     }

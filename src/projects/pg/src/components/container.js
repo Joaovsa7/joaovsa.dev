@@ -23,7 +23,7 @@ const Container = (props) => {
                     </div>
                 </nav>
             </div>
-            <Link to="/" style={{margin: 10}}>Voltar </Link>
+            <Link to="/" style={{margin: 20}}>Voltar para a home </Link>
        </div>
     )
 }

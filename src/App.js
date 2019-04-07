@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import logo from './logo.svg';
 import { Route, Switch } from 'react-router-dom'
 import Home from './pages/Home/Home';
-import GitHubApp from './projects/pg/src/App';
-import TodoList from './projects/todo_/src/App'
+import GitHubApp from './projects/pg/src/GithubApp';
+import TodoList from './projects/todo_/src/TodoApp'
 
 class App extends Component {
   render() {

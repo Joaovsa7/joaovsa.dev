@@ -35,7 +35,6 @@
         animation: fadeInLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         > a {
             text-decoration: none;
-            font-weight: bold;
             color: inherit;
             &:visited{
                 color: inherit;
@@ -48,6 +47,23 @@
         }
         &:nth-child(2n + 1){
             animation: fadeInRight 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    }
+    > .social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        cursor: pointer;
+        > .project {
+            width: 80px;
+            text-align: center;
+            &:nth-child(1):hover{
+                background-color: #007dbb;
+                border: 1px solid #007dbb;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+                color: white;
+            }
         }
     }
 }
