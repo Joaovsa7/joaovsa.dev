@@ -10,7 +10,7 @@ const WrapperComponent = (props) => {
             <div id="container">
                 {props.children}
             </div>
-            <Link to="/" style={{textDecoration: 'none', margin: 20}}>Voltar para a home</Link>
+            <Link to="/" style={{textDecoration: 'none', margin: 20}} onClick={localStorage.clear()}>Voltar para a home</Link>
         </div>
      );
 }
