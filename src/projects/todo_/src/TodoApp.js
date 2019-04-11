@@ -28,7 +28,7 @@ class TodoApp extends Component {
     const novaTarefa = { 
         ...this.state.listaDeTarefas, 
         nome, 
-        id: this.state.listaDeTarefas.length + 1, 
+        id: this.state.listaDeTarefas.length + Math.random().toString(36).substr(2), 
         editTarefa: false
       }
     this.setState({listaDeTarefas: [...this.state.listaDeTarefas, novaTarefa], todoValue: ''})
@@ -44,7 +44,7 @@ class TodoApp extends Component {
     const minuto = agora.getMinutes();
     const segundos = agora.getSeconds();
     //criando um obj com as novas datas
-    tarefa = {...tarefa, hora, minuto, segundos, dia, mes, ano}
+    tarefa = {...tarefa, hora, minuto, segundos, dia, mes, ano, editTarefa: false}
     this.setState(estado => ({
       listaDeTarefas: estado.listaDeTarefas.filter((excluir) => excluir.id !== tarefa.id),
       tarefasCompletas: estado.tarefasCompletas.concat([tarefa]),
