@@ -28,7 +28,7 @@ class TodoApp extends Component {
     const novaTarefa = { 
         ...this.state.listaDeTarefas, 
         nome, 
-        id: this.state.listaDeTarefas.length + Math.random().toString(36).substr(2), 
+        id: this.state.listaDeTarefas.length + Math.random().toString(36).substring(7) 
         editTarefa: false
       }
     this.setState({listaDeTarefas: [...this.state.listaDeTarefas, novaTarefa], todoValue: ''})
