@@ -11,7 +11,7 @@ const Container = (props) => {
             <div id="content">
                 <div id="search" className={`${props.estado.showSearch === false ? 'hide' : ''}`}>
                     <input type="text" placeholder="Digite o seu usuário no Github" value={props.state.value}  onChange={props.handleChange} />
-                    <button onClick={props.fetchData}>Get user </button>
+                    <button onClick={props.fetchData} onTouchStart={props.fetchData}>Buscar os dados</button>
                 </div>     
                 {props.children}
                 <nav>
