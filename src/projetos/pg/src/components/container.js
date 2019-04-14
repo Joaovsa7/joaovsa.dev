@@ -16,10 +16,10 @@ const Container = (props) => {
                 {props.children}
                 <nav>
                     <div>
-                        <Link to="/projects/git_app/home">Perfil</Link>
+                        <Link to="/projetos/git_app">Perfil</Link>
                     </div>
                     <div className={`${props.state.showRep === false ? 'hide' : ''}`}>
-                        <Link to="/projects/git_app/repos">Repositórios</Link>
+                        <Link to="/projetos/git_app/repos">Repositórios</Link>
                     </div>
                 </nav>
             </div>

@@ -14,10 +14,10 @@ export default class Home extends Component {
                     </div>
                 </div>
                 <div className="project">
-                    <Link to="/projects/git_app/home">Github - consumindo API</Link>
+                    <Link to="/projetos/git_app">Github - consumindo API</Link>
                 </div>
                 <div className="project">
-                    <Link to="/projects/todo_/home">Lista de Tarefas - APP</Link>
+                    <Link to="/projetos/todo_">Lista de Tarefas - APP</Link>
                 </div>
                 <p>Redes sociais</p>
                 <div className="social">
