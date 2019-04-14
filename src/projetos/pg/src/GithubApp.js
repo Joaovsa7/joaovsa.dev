@@ -1,8 +1,6 @@
-import React, { Component, useState ,useEffect } from 'react';
-import * as Styles from './styles/style.scss'
-import CardUser from './components/cardUser';
+import React, { Component } from 'react';
 import Profile from './components/profile';
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Repos from './components/repositories';
 
 
@@ -35,7 +33,6 @@ class GitHubApp extends Component {
   }
   fetchData(){
     const controller = new AbortController();
-    const signal = controller.signal
     this.msgFunction('Carregando...')
     if(this.state.value === ""){
       this.msgFunction('O campo não pode estar vazio')

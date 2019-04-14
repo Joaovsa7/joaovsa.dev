@@ -1,7 +1,5 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import CardUser from './cardUser'
-import * as Style from '../styles/style.scss'
-import Repos from './repositories';
 import Container from './container'
 class Profile extends Component {
     constructor(props){

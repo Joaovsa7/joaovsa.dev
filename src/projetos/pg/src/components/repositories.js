@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Container from './container';
 
 class Repos extends Component {
@@ -19,10 +19,8 @@ class Repos extends Component {
         const controller = new AbortController()
         const urlTofetch = `https://api.github.com/users/${this.props.state.username}/repos?sort=created`
         if(this.props.state.username === undefined){
-            this.setState({
-                error: true
-            })
-            return false;
+            controller.abort()
+            this.setState({error: true})
         }
         fetch(urlTofetch)
         .then(response => response.json()) 

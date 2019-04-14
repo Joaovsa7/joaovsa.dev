@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Style from '../styles/style.scss'
 
 const Container = (props) => {
     return(

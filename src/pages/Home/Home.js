@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 export default class Home extends Component {
@@ -23,11 +23,11 @@ export default class Home extends Component {
                 <div className="social">
                     <div className="project">
                         <a href="http://www.linkedin.com/in/jvsa7" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
+                            <i className="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                     <div className="project">
-                        <a href="http://www.github.com/joaovsa7" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="http://www.github.com/joaovsa7" target="_blank"><i className="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>

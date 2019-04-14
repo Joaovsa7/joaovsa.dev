@@ -5,13 +5,13 @@ const Tarefas = (props) => {
     return ( 
             <Fragment>
                     { props.state.listaDeTarefas.map((tarefa, index) => (
-                                <div className="todo_list">
-                                    <li key={tarefa.id} class="tarefa">
+                                <div className="todo_list"  key={tarefa.id}>
+                                    <li className="tarefa">
                                         {
                                             tarefa.editTarefa === true ? (
                                                 <Fragment>
                                                     <input type="text"  className="edtInput" onChange={props.quandoMudar}  name="editValue" value={props.state.editValue} placeholder="Edite a tarefa" />
-                                                    <button  class="btnIcon" onClick={() => props.editar(index, props.state.editValue)}><i className="fas fa-pencil-alt"></i></button>
+                                                    <button  className="btnIcon" onClick={() => props.editar(index, props.state.editValue)}><i className="fas fa-pencil-alt"></i></button>
                                                 </Fragment>
                                             ) :   ( tarefa.nome )  
                                 

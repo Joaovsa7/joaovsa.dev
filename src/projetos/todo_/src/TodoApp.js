@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import './todo_app.scss'
 import Tarefas from './components/tarefas';
 import WrapperComponent from './components/wrapper';
 import FormTarefa from './components/form';

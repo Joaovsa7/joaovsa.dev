@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import * as Style from '../styles/style.scss'
 
 class CardUser extends Component {
     render(){
