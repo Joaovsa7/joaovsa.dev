@@ -4,4 +4,4 @@
 #### O site está sendo hospedado no netlify.
 ##### Você pode acessar o site aqui:  
 
-[www.joaovsa.dev link]("https://www.joaovsa.dev")
+[www.joaovsa.dev](https://www.joaovsa.dev)
