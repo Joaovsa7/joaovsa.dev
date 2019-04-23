@@ -5,8 +5,8 @@ class Profile extends Component {
     constructor(props){
         super(props)
             this.state = {
-        showSearch: true
-    }
+                showSearch: true
+            }
     }
 
     render(){

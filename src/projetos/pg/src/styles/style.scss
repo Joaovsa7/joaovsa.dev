@@ -20,8 +20,8 @@ $secondaryColor: white;
         transform: translateX(-80px)
     }
     100% {
-                transform: translateX(0px);
-                display: none;
+        transform: translateX(0px);
+        display: none;
     }
 }
 
@@ -194,7 +194,9 @@ $secondaryColor: white;
             justify-content: space-around;
             align-items: center;
             flex-flow: wrap;
-            > div {
+            text-decoration: none;
+            outline: none;
+            > a {
                 margin: 0 auto;
                 width: 49%;
                 margin: 10px 0px;
@@ -204,6 +206,8 @@ $secondaryColor: white;
                 border-radius: 4px;
                 color: $secondaryColor;
                 transition: all .3s;
+                outline: none;
+                text-decoration: none;
                 > h4 {
                     font-size: 14px;
                     font-weight: 200;
@@ -211,17 +215,12 @@ $secondaryColor: white;
                     margin: 5px 0px;
                     margin-left: 10px;
                     color: inherit;
+                    text-decoration: none;
+                    outline: none;
                     > span {
                         color: inherit;
                         font-weight:lighter;
                         font-size: 12px;
-                    }
-                    > a{
-                        color: inherit;
-                        text-decoration: none;
-                        &:visited{
-                            outline: none;
-                        }
                     }
                 }
                 &:hover {
@@ -229,6 +228,10 @@ $secondaryColor: white;
                     color: $mainColor!important;
                     transform: scale(1.2);
                     transition: all .3s;
+                }
+                &:visited{
+                    text-decoration: none;
+                    outline: none;
                 }
             }
             

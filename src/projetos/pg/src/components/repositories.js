@@ -43,11 +43,11 @@ class Repos extends Component {
                                 <h2>Você precisa retornar a pagina inicial</h2>
                             ) : (
                                 this.state.repos.map((repositorio) => (
-                                    <div key={repositorio.id}>
+                                    <a key={repositorio.id} href={repositorio.html_url} rel="noopener noreferrer">
                                         <h4><span>Nome: </span>{repositorio.name}</h4>
                                         <h4><span>Linguagem: </span>{repositorio.language}</h4>
-                                        <h4><a href={repositorio.html_url} target="_blank">Mais detalhes no github</a></h4>
-                                    </div>
+                                        <h4>Mais detalhes no github</h4>
+                                    </a>
                                 ))
                             )
                         }  
