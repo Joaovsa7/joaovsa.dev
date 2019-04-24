@@ -3,10 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Montserrat';
     > #mainDiv {
         animation:entrarLogo 1s linear;
         > h1 {
-            font-family: 'MontSerrat';
+            font-family: 'Montserrat';
             font-size: 3.2em;
         }
         > #projects {
@@ -19,7 +20,7 @@
             text-align: center;
             > p {
                 font-size: 14px;
-                font-weight: 600;
+                font-weight: bold;
             }
         }
     }
@@ -36,6 +37,7 @@
         > a {
             text-decoration: none;
             color: inherit;
+            font-weight: bold;
             &:visited{
                 color: inherit;
             }
@@ -49,11 +51,11 @@
             animation: fadeInRight 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
     }
-    > .social {
+    > .socialHome {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 200px;
+        width: 222px;
         cursor: pointer;
         > .project {
             width: 80px;

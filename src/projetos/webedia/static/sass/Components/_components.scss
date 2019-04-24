@@ -10,6 +10,7 @@ $md_device: 768px;
 //container segundo o psd
 $container_width:962px;
 
+
 //animacoes
 @keyframes EntradaCloseBtn {
     0% {
@@ -79,6 +80,10 @@ $container_width:962px;
 button, input {
     background-color: transparent;
     outline: none;
+}
+
+* {
+    font-family: 'Lato';
 }
 
 

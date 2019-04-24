@@ -23,7 +23,7 @@ export default class Home extends Component {
                     <Link to="/projetos/portal-news">Portal de notícias - API</Link>
                 </div>
                 <p>Redes sociais</p>
-                <div className="social">
+                <div className="socialHome">
                     <div className="project">
                         <a href="http://www.linkedin.com/in/jvsa7" target="_blank">
                             <i className="fab fa-linkedin-in"></i>
