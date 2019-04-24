@@ -12,8 +12,9 @@ class App extends Component {
           <Fragment>
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/projetos/git_app"  component={GitHubApp} />
-                <Route exact path="/projetos/todo_"  component={TodoList} />
+                <Route exact path="/projetos/git-app/"  component={GitHubApp} />
+                <Route exact path="/projetos/git-app/:name"  component={GitHubApp} />
+                <Route exact path="/projetos/todo-app/"  component={TodoList} />
                 <Route exact path="/projetos/pesquisa_de_livros" component={Pesquisa_de_livros} />
                 <Route exact path="/projetos/webedia-news" component={Webedia} />
               </Switch>
