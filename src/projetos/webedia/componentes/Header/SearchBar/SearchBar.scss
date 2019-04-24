@@ -1,0 +1,49 @@
+.formBox {
+    display: none;
+    > #searchForm {
+        margin-top: 10px;
+        > input {
+            height: 44px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+            padding: 0px 0px 0px 45px;
+            border-radius: 9px;
+            animation: SearchBarTopToBottomMobile .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        > button {
+            animation: SearchBarTopToBottomMobile .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: absolute;
+            top: 25px;
+            left: 5px;
+        }
+    }
+    @media screen and (min-width: $md_device){
+        display: block;
+        height: 60px;
+        position: relative;
+        > #searchForm {
+            width: inherit;
+            > input {
+                width: 223px;
+                border-radius: 50px;
+            }
+            > button {
+                position: absolute;
+                top: 20px;
+                left: 85%;
+            }
+        }
+    }
+}
+
+.formBox.showing {
+    width: 100%;
+    display: block;
+    > #searchForm {
+        > input {
+            width: 69%;
+            @media only screen and (min-width: 568px){
+                width: 80%;
+            }
+        }
+    }
+}

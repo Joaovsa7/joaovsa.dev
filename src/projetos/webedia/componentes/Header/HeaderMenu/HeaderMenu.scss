@@ -1,0 +1,87 @@
+nav {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    width: 83.7%;
+    left: -8px;
+    top: 0;
+    transform: translateX(-150%);
+    > ul {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+        top: 30px;
+        list-style-type: none;
+        text-transform: uppercase;
+        > li {
+            cursor: pointer;
+            margin: 15px 0px;
+            list-style-type: none;
+            color: $blue_theme;
+            @media only screen and (max-width: 768px){
+                &::after {
+                    content: '';
+                    display: block;
+                    margin-top: 10px;
+                    height: 3px;
+                    width: 100%;
+                    background-color:#f1eff1;
+                }
+            }
+            &:nth-child(1){
+                margin-top: 0;
+            }
+        }
+    }    
+    
+    @media only screen and (min-width: 409px){
+        width: 86%;
+    }
+    @media screen and (min-width:$md_device){
+        margin-top: 1%;
+        max-height: 52px;
+        width: 100vw;
+        position: relative;
+        transform: translate(0);
+        transition: none;
+        box-shadow: $default_box_shadow;
+        > ul {
+            padding: 0px;
+            height: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            max-width: $container_width;
+            margin: 0 auto;
+            top: 0;
+            > li {
+                height: 52px;
+                padding: 0 4px;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                &:hover {
+                    transition: .4s all;
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: relative;
+                        top: 16px;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $blue_theme;
+                    }
+                }
+            }
+        }
+    }
+}
+nav.enter {
+    position: fixed;
+    transition: .5s all;
+    transform: translateX(0);
+}

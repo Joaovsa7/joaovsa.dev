@@ -1,0 +1,24 @@
+.SearchIconMenu {
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+.SearchIcon {
+    width: 100%;
+}
+
+.SearchIcon.noEvents {
+    opacity: 0;
+    pointer-events: none;
+}
+.SearchIconMenu.search_active {
+    display: none;
+}
+
+@media only screen and (min-width: $md_device){
+    .SearchIconMenu {
+        display: none;
+    }
+    .SearchIcon {
+        right: 0;
+    }
+}

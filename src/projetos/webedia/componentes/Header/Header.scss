@@ -1,0 +1,16 @@
+header {
+    min-height: 45px;
+    position: relative;
+    padding-top: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 45px;
+    @media only screen and (min-width: $md_device){
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        max-width: $container_width;
+        margin: 0 auto;
+    }
+}

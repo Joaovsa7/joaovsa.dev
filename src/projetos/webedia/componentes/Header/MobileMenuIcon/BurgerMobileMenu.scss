@@ -1,0 +1,19 @@
+.BurgerMobileMenu {
+    margin-bottom: 2px;
+    width: 25px;
+    > .MobileIcon { 
+        width: 25px;
+        cursor: pointer;
+    }
+}
+
+.BurgerMobileMenu.search_active {
+    display: none;
+}
+
+
+@media only screen and (min-width: $md_device){
+    .BurgerMobileMenu {
+        display: none;
+    }
+}

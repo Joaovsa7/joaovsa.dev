@@ -1,0 +1,14 @@
+.loadMore {
+    margin: 10px 0px;
+    width: 100%;
+    text-align: center;
+    > button {
+        cursor: pointer;
+        max-width: 250px;
+        height: 60px;
+        border-radius: 4px;
+        width: 100%;
+        background-color: $blue_theme;
+        color: white;
+    }
+}

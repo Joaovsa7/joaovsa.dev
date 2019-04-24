@@ -1,0 +1,22 @@
+//Aqui ficará os meus mixins, variaveis e afins. Também com o reset.scss
+
+//reset e setando fonte padrão
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', 'Helveltica';
+    overflow-x: hidden;
+    background-color: #f1eff1;
+}
+
+input, button, select {
+    outline: none;
+    border: none;
+}
+button {
+    background: none;
+}
+
+//variaveis
+

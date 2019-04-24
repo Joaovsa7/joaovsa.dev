@@ -1,0 +1,140 @@
+h1 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 200;
+    @media screen and (min-width:568px){
+        font-size: 25px;
+    }
+}
+
+.News_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    > .News {
+        width: 100%;
+        border-radius: 4px;
+        background-color: white;
+        box-shadow: $default_box_shadow;
+        animation:  newsInputLeftToRight .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        text-decoration: none;
+        > .imgBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $gray_text;
+            background-size: cover;
+            width: 95vw;
+            height: 200px;
+            border-radius: 4px 4px 0px 0px;
+            text-align: center;
+            > img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: inherit;
+            }
+        }
+        > .infos {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 10px;
+            > span {
+                color: $gray_text;
+                font-size: 15px;
+            }
+            > h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin: 8px 0px;
+                color: $blue_theme;
+                word-break: normal;
+                > a {
+                    color: inherit;
+                    text-decoration: none;
+                    &:visited {
+                        color: inherit;
+                    }
+                }
+            }
+            > .description {
+                color: $gray_text;
+                margin: 2px auto;
+                font-size: 14px;
+            }
+            > .author {
+                color: $blue_theme;
+                font-weight: bold;
+            }
+        }
+        &:nth-child(2n + 1){
+            animation:  newsInputRightToLeft .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        &:visited {
+            text-decoration: none;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        margin: 1% auto;
+        max-width: $container_width;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap;
+        > .News {
+            margin: 10px 0px;
+            width: 48%;
+            height: 550px;
+            > .imgBox {
+                height: 280px;
+                max-width: 100%;
+            }
+            > .infos {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                height: 240px;
+                > h3 {
+                    font-size: 18px;
+                }
+                > span {
+                    margin-top: 10px;
+                    font-size: 18px;
+                }
+                > .description {
+                    width: 95%;
+                    text-align: center;
+                    font-size: 17px;
+                }
+            }
+            &:hover {
+                transition: all .3s;
+                transform: scale(1.05);
+            }
+            &:nth-child(3){
+                width: 302px;
+            }
+            &:nth-child(4){
+                width: 302px;
+            }
+            &:nth-child(5){
+                width: 302px;
+            }
+        }
+    }
+    @media only screen and (min-width: 1200px){
+        > .News{
+            width: 470px;
+            margin: 20px 0px;
+            &:nth-child(3){
+                width: 31%;
+            }
+            &:nth-child(4){
+                width: 31%;
+            }
+            &:nth-child(5){
+                width: 31%;
+            }
+        }
+    }
+}

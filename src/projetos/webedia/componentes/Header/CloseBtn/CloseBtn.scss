@@ -1,0 +1,33 @@
+.CloseBtn {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: $default_box_shadow;
+    animation: EntradaCloseBtn .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    > button {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.CloseBtn.SearchBar {
+    margin-top: 1px;
+    top: 15px;
+    right: 0;
+}
+
+.CloseBtn.Menu {
+    top: 5px;
+    left: 105%;
+}
+
+@media only screen and (min-width: $md_device){
+    .CloseBtn {
+        display: none;
+    }
+}

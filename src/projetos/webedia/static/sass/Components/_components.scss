@@ -1,0 +1,18 @@
+//importando as variaveis 
+@import '../helpers/_variables_animations_mixins.scss';
+//componentes
+@import '../../../componentes/RequestData/Card_News/LoadMoreOrLessBtn/LoadMoreOrLessBtn.scss';
+@import '../../../componentes/Footer/Footer.scss';
+@import '../../../componentes/Error/Error.scss';
+@import '../../../componentes/Loading/Loading.scss';
+@import '../../../componentes/Logo/Logo.scss';
+@import '../../../componentes/Container/Container.scss';
+@import '../../../componentes/Header/MobileMenuIcon/BurgerMobileMenu.scss';
+@import '../../../componentes/Header/SearchIcon/SearchIcon.scss';
+@import '../../../componentes/Header/SearchBar/SearchBar.scss';
+@import '../../../componentes/Header/CloseBtn/CloseBtn.scss';
+@import '../../../componentes/Header/Header.scss';
+@import '../../../componentes/Header/HeaderMenu/HeaderMenu.scss';
+@import '../../../componentes/OverlayComponent/Overlay.scss';
+
+@import '../../../componentes/RequestData/Card_News/Card_News.scss';

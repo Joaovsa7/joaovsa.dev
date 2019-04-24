@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import GitHubApp from './projetos/pg/src/GithubApp';
 import TodoList from './projetos/todo_/src/TodoApp'
 import Pesquisa_de_livros from './projetos/pesquisa_de_livros/Pesquisa_de_livros';
+import Webedia from './projetos/webedia/App';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
                 <Route exact path="/projetos/git_app"  component={GitHubApp} />
                 <Route exact path="/projetos/todo_"  component={TodoList} />
                 <Route exact path="/projetos/pesquisa_de_livros" component={Pesquisa_de_livros} />
+                <Route exact path="/projetos/webedia-news" component={Webedia} />
               </Switch>
           </Fragment>
       );
