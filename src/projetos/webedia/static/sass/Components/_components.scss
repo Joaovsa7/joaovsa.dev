@@ -1,5 +1,87 @@
-//importando as variaveis 
-@import '../helpers/_variables_animations_mixins.scss';
+//variaveis
+$default_box_shadow: 2px 2px 5px rgba(0,0,0,0.15);
+$color_psd: #f1eff1;
+$blue_theme: #7ca3d2;
+$gray_text: #a9a9a9;
+
+//medium device, tablet
+$md_device: 768px;
+
+//container segundo o psd
+$container_width:962px;
+
+//animacoes
+@keyframes EntradaCloseBtn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes SearchBarTopToBottomMobile {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes loading{
+    0% {
+        transform: scale(0)
+    }
+    25% {
+        transform: scale(1.5)
+    }
+    50% {
+        transform: scale(0)
+    }
+
+    75% {
+        transform: scale(1.5)
+    }
+
+    100% {
+        transform: scale(0)
+    }
+}
+
+@keyframes newsInputRightToLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes newsInputLeftToRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+//defaultStyles
+button, input {
+    background-color: transparent;
+    outline: none;
+}
+
+
 //componentes
 @import '../../../componentes/RequestData/Card_News/LoadMoreOrLessBtn/LoadMoreOrLessBtn.scss';
 @import '../../../componentes/Footer/Footer.scss';
@@ -16,3 +98,6 @@
 @import '../../../componentes/OverlayComponent/Overlay.scss';
 
 @import '../../../componentes/RequestData/Card_News/Card_News.scss';
+
+
+//

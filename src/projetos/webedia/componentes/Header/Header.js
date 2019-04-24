@@ -15,7 +15,7 @@ export default function Header({ ChangeFetchParams, setCountry }){
     return (
         // A lógica aqui é, se a propriedade SearchMobileActive estiver true, alguns itens irão ter display: none
         <Fragment>
-            <header>
+            <header id="header-news-app">
                 <BurgerMobileMenu searchActive={SearchMobileActive} MobileMenuActive={MobileMenuActive} clickMenu={() => setMobileMenuActive(true)} />
                 <Logo logoPath={require("../../static/img/logo.png")} target={""} searchActive={SearchMobileActive} />
                 <SearchIconMenu searchActive={SearchMobileActive} enableSearch={() => setSearchMobileActive(true)} MobileMenuActive={MobileMenuActive} />

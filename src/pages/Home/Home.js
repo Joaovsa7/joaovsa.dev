@@ -19,6 +19,9 @@ export default class Home extends Component {
                 <div className="project">
                     <Link to="/projetos/todo-app">Lista de Tarefas - APP</Link>
                 </div>
+                <div className="project">
+                    <Link to="/projetos/portal-news">Portal de notícias - API</Link>
+                </div>
                 <p>Redes sociais</p>
                 <div className="social">
                     <div className="project">

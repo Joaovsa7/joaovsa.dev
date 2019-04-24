@@ -1,9 +1,12 @@
-h1 {
+#titleCountry {
     font-size: 20px;
+    font-family: 'Lato';
     text-align: center;
     font-weight: 200;
+    margin: 4% 0%;
     @media screen and (min-width:568px){
         font-size: 25px;
+        margin: 1%;
     }
 }
 
@@ -76,7 +79,7 @@ h1 {
         }
     }
     @media only screen and (min-width: 768px){
-        margin: 1% auto;
+        margin: 0 auto;
         max-width: $container_width;
         display: flex;
         justify-content: space-between;

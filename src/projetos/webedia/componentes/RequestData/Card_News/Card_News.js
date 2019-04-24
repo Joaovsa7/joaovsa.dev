@@ -56,7 +56,7 @@ export default function NewsContainer({ News, country }){
     //Como algumas notícias não possuem o autor no json, preciso verificar
     return ( 
             <Fragment>
-                <h1>{`As principais notícias ${informCountryToUser(country)}`}</h1>
+                <h1 id="titleCountry">{`As principais notícias ${informCountryToUser(country)}`}</h1>
                 <section className="News_container">
                     {
                         News.slice(0, maxNews).map(({ author, description, publishedAt, title, url, urlToImage }, index) => (
