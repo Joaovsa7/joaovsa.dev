@@ -5,15 +5,18 @@
     opacity: 0;
   }
   .page-enter-active {
+    background-color: black;
     opacity: 1;
-    transition: opacity 100ms ease-in;
+    transition: opacity 500ms ease-in;
   }
   .page-exit {
+    background-color: black;
     opacity: 1;
   }
   .page-exit-active {
+    background-color: black;
     opacity: 0;
-    transition: opacity 100ms ease-in;
+    transition: opacity 500ms ease-in;
   }
 
   .title {
@@ -25,8 +28,10 @@
   background-color: black;
   width: 100vw;
 }
-
-
+#root {
+  height: 100vh;
+  width: 100vw;
+}
 
 @import './reset.scss';
 @import '../sass/variables.scss';
@@ -40,7 +45,6 @@
 
 .main-content {
   max-width: 75%;
-  height: 92vh;
   width: 80%;
   margin: 0 auto;
   @include centerAll(center, center);

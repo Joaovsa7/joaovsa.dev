@@ -14,7 +14,7 @@ class App extends Component {
           <Fragment>
             <Route render={(({ location }) => 
                    <TransitionGroup>
-                   <CSSTransition classNames="page" timeout={300} key={location.key}>  
+                   <CSSTransition classNames="page" timeout={1000} key={location.key}>  
                      <Switch location={location}>
                        <Route exact={ true} path="/" component={Home} />
                        <Route exact={ true} path="/projetos/" component={Projetos} />

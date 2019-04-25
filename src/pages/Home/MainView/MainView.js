@@ -9,7 +9,7 @@ export default function MainView(){
         return (
                 <main className="main-content">
                       <TransitionGroup>
-                        <CSSTransition id="title-text" timeout={2000} in={true} appear={true} classNames="item">
+                        <CSSTransition id="title-text" timeout={1000} in={true} appear={true} classNames="item">
                               <div id="title-text">
                                     <div>
                                           <h1>Seja bem vindo ao meu site</h1>
