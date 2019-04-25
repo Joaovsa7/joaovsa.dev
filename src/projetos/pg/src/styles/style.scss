@@ -8,10 +8,10 @@ $secondaryColor: white;
     color: $secondaryColor;
 }
 
-@mixin  centerAll {
+@mixin  centerAll($justify, $alignItems) {
     display: flex;
-    align-items: center; 
-    justify-content: center;
+    align-items: $alignItems; 
+    justify-content: $justify;
 }
 
 @keyframes toShow{
@@ -38,7 +38,7 @@ $secondaryColor: white;
     }
     .show {
         animation: .4s toShow ease;
-        @include centerAll();
+        @include centerAll(center,center);
         max-width: 600px; 
         width: 100%;
         text-align: center;
@@ -164,7 +164,7 @@ $secondaryColor: white;
                 width: 15%;
                 background-color: $mainColor;
                 border-radius: 0px 4px 4px 0px;
-                @include centerAll();
+                @include centerAll(center,center);
                 > a {
                     font-size: 20px;
                     font-weight: bold;
@@ -242,7 +242,7 @@ $secondaryColor: white;
                 font-weight: bold;
             }
         }
-        > nav {
+        > .navGithub {
             display: flex;
             height: 50px;
             width: 100%;

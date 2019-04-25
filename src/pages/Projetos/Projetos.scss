@@ -1,0 +1,47 @@
+.main-content {
+    flex-direction: column;
+    > h1 {
+        color: white;
+        margin-bottom: 10vh;
+    }
+    > .cards {
+        margin:  0 auto;
+        @include centerAll(space-between, center);
+        flex-direction: row;
+        > .card-project {
+            background-color: white;
+            border-radius: 4px;
+            height: 150px;
+            width: 200px;
+            transition: 1s all;
+            &:hover {
+                transition: 1s all;
+                background-color: tomato;
+                color: white;
+            }
+            > a {
+                color: black;
+                font-weight: bold;
+                text-decoration: none;
+                height: 100%;
+                width: 100%;
+                @include centerAll(center,center);
+                &:visited {
+                    color: black;
+                }
+                &:hover{
+                    color: white;
+                }
+            }
+            &:nth-child(2){
+                margin: 0% 5%;
+            }
+        }
+        @media only screen and (max-width: 768px){
+            flex-direction: column;
+            > .card-project:nth-child(2) {
+                margin: 2% 0%;
+            }
+        }
+    }
+}

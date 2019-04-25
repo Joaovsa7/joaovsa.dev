@@ -1,4 +1,4 @@
-nav {
+.nav-portal-news {
     z-index: 1;
     display: block;
     position: absolute;
@@ -80,7 +80,7 @@ nav {
         }
     }
 }
-nav.enter {
+.nav-portal-news.enter {
     position: fixed;
     transition: .5s all;
     transform: translateX(0);

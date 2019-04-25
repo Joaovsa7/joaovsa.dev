@@ -13,7 +13,7 @@ const Container = (props) => {
                     <button onClick={props.fetchData} onTouchStart={props.fetchData}>Buscar os dados</button>
                 </div>     
                 {props.children}
-                <nav>
+                <nav className="navGithub">
                     <div>
                         <Link to="/projetos/git-app/">Perfil</Link>
                     </div>

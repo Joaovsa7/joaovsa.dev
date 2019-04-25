@@ -11,7 +11,7 @@ export default function HeaderMenu({ MobileMenuActive, CloseMenu, ChangeFetchPar
     }
 
     return ( 
-        <nav className={MobileMenuActive ? 'enter' : ''}>
+        <nav className={"nav-portal-news" + (MobileMenuActive ? ' enter' : '')}>
             <ul>
                 {
                     MenuItems.map(({id, req_country_id, name}) => (

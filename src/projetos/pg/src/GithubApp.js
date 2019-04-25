@@ -31,7 +31,7 @@ class GitHubApp extends Component {
       value: ''
     })
   }
-  fetchData(){
+  async fetchData(){
     const controller = new AbortController();
     this.msgFunction('Carregando...')
     if(this.state.value === ""){
@@ -40,7 +40,7 @@ class GitHubApp extends Component {
       return false
     }
     const urlTofetch = `https://api.github.com/users/${this.state.value}`
-    fetch(urlTofetch)
+    await fetch(urlTofetch)
     .catch(err => {this.msgFunction(err)})
     .then(response => {
       if(response.status === 403){

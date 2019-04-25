@@ -1,103 +1,107 @@
-.container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat';
-    > #mainDiv {
-        animation:entrarLogo 1s linear;
-        > h1 {
-            font-family: 'Montserrat';
-            font-size: 3.2em;
-        }
-        > #projects {
-            margin: 10px 0px;
-            background-color: #333;
-            border-radius: 4px;
-            padding: 10px;
-            font-size: 12px;
-            color: white;
-            text-align: center;
-            > p {
-                font-size: 14px;
-                font-weight: bold;
-            }
-        }
-    }
-    .project {
-        padding: 10px;
-        width:  200px;
-        margin: 5px 0px;
-        border-radius: 4px;
-        border: 1px solid #666;
-        color: black;
-        transition: all .2s;
-        animation: none;
-        animation: fadeInLeft 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        > a {
+//importando o scss das demais paginas
+.home_header {
+    height: 8vh;
+    width: 100%;
+    > nav {
+        background-color: inherit;
+        height: inherit;
+        max-width: 75%;
+        margin: 0 auto;
+        width: inherit;
+        @include centerAll(space-between, center);
+        > a  {
             text-decoration: none;
-            color: inherit;
-            font-weight: bold;
-            &:visited{
-                color: inherit;
+            > h1 {
+                color: white;
+                width: 60%;
+                padding: 8px;
+                font-family: 'Montserrat';
+                font-size: 2.2em;
             }
-        }
-        &:hover{
-            background-color: #333;
-            color: white;
-            transition: all .2s;
-        }
-        &:nth-child(2n + 1){
-            animation: fadeInRight 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-    }
-    > .socialHome {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 222px;
-        cursor: pointer;
-        > .project {
-            width: 80px;
-            text-align: center;
-            &:nth-child(1):hover{
-                background-color: #007dbb;
-                border: 1px solid #007dbb;
-                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            &:visited{
                 color: white;
             }
+        } 
+        > ul {
+            width: 20%;
+            @include centerAll(space-around, center);
+            flex-direction: row;
+            > li {
+                list-style-type:none;
+                > a {
+                    color: white;
+                    text-decoration: none;
+                    &:visited {
+                        color: white;
+                    }
+                }
+            }
         }
     }
 }
 
-@keyframes entrarLogo {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700');
+
+
+
+.main-content {
+    max-width: 75%;
+    height: 92vh;
+    width: 80%;
+    margin: 0 auto;
+    @include centerAll(center, center);
+    > div > #title-text {
+        color: white;
+        > div {
+            margin-bottom: 10vh;
+            > h1 {
+                font-family: "Montserrat";
+                font-weight: 200;
+                font-size: 3.2em;
+            }
+        }
     }
-    
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+}
+.lfm__typing_effect {
+    font-weight: 200;
+    margin-top: 5px;
+    text-align: center;
 }
 
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-200px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+.item-enter-done {
+    opacity: 1;
+    color: white;
+    transition: opacity 2000ms ease-in;
+  }
+  .item-appear {
+    opacity: 0;
+    transition: opacity 1000ms ease-in;
 
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(200px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+  }
+  .item-appear-done-active {
+      opacity: 1;
+      transition: opacity 2000ms ease-in;
+  }
+  .item-enter-active {
+    opacity: 1;
+    transition: opacity 2000ms ease-in;
+  }
+  .item-exit {
+    opacity: 0;
+    color: white;
+    transition: opacity 2000ms ease-in;
+  }
+  .item-exit-active {
+    opacity: 0;
+    transition: opacity 2000ms ease-in;
+  }
+  .item-appear-done {
+      opacity: 1;
+      color: white;
+      transition: 2000ms ease-in;
+  }
+
+
+
+
+
