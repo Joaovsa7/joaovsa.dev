@@ -1,21 +1,18 @@
 import React, { Fragment } from 'react';
-import Header from './Header/Header';
 import MainView from './MainView/MainView';
-
+import SiteWrapper from './siteWrapper/SiteWrapper'
 
 //este componente é o "header" do meu site.
 export default function Home(){
-        const [b, setB] = React.useState(true)
-        const a = '#000'
-        React.useEffect(() => {
-            setTimeout(() => {
-                setB(true)
-            }, 3000);
-        })
+
             return (
-                    <div className="page-container">
-                        <Header/>
-                        <MainView/>
-                    </div>
+                <SiteWrapper bgColor={"black"}>
+                    <MainView mainClass="main-content" cssClass="title" cssId="title-text">
+                            <div id="title-text">
+                                <h1>Desenvolvedor <br /> Front end</h1>
+                                <span>Oi, seja bem vindo ao meu site.</span>
+                           </div> 
+                    </MainView>
+                </SiteWrapper>
             )
 }

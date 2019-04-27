@@ -44,62 +44,84 @@
 
 
 
+
+
 .main-content {
     max-width: 75%;
     height: 92vh;
     width: 80%;
     margin: 0 auto;
-    @include centerAll(center, center);
-    > div > #title-text {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    flex-direction: column;
+    #title-text {
         color: white;
-        > div {
-            margin-bottom: 10vh;
-            > h1 {
-                font-family: "Montserrat";
-                font-weight: 200;
-                font-size: 3.2em;
-            }
+        margin-bottom: 20vh;
+        > h1 {
+            font-family: "Montserrat";
+            font-weight: 600;
+            font-size: 5em;
+            pointer-events: none;
         }
     }
 }
+
+
 .lfm__typing_effect {
     font-weight: 200;
     margin-top: 5px;
-    text-align: center;
+    text-align: left;
+    max-width: 350px;
 }
 
-.item-enter-done {
-    opacity: 1;
-    color: white;
-    transition: opacity 2000ms ease-in;
-  }
-  .item-appear {
-    opacity: 0;
-    transition: opacity 1000ms ease-in;
 
-  }
-  .item-appear-done-active {
-      opacity: 1;
-      transition: opacity 2000ms ease-in;
-  }
-  .item-enter-active {
+
+.title {
+    font-weight: 600;
+    font-family: 'MontSerrat';
+    font-size: 4em;
+    color: white;
+}
+
+//animacoes referente ao css transition group
+
+.title-enter-done {
     opacity: 1;
-    transition: opacity 2000ms ease-in;
-  }
-  .item-exit {
+    transform: translateX(0%);
+    transition: opacity 400ms all;
+}
+.title-appear {
+    opacity: 0;
+    transform: translateX(-200%);
+    transition: transform 400ms all;
+    
+}
+.title-appear-done-active {
+    opacity: 1;
+    transition: opacity 400ms all;
+}
+.title-enter-active {
+    opacity: 1;
+    transform: translateX(50%);
+    transition: transform 400ms all;
+    pointer-events: none;
+}
+.title-exit {
     opacity: 0;
     color: white;
-    transition: opacity 2000ms ease-in;
-  }
-  .item-exit-active {
+    transform: translateX(100%);
+    transition: transform 400ms all;
+}
+.title-exit-active {
     opacity: 0;
-    transition: opacity 2000ms ease-in;
-  }
-  .item-appear-done {
-      opacity: 1;
-      color: white;
-      transition: 2000ms ease-in;
-  }
+    transition: opacity 400ms all;
+}
+.title-appear-done {
+    opacity: 1;
+    pointer-events: none;
+    transition:  1000ms all;
+}
 
 
 

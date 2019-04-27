@@ -3,33 +3,34 @@
 
 .page-enter {
     opacity: 0;
+    overflow: hidden;
   }
+
+  .page-appear-active {
+    overflow: hidden;
+
+  }
+
   .page-enter-active {
     opacity: 1;
-    transition: opacity 500ms ease-in;
+    overflow: hidden;
+    transition: opacity 200ms ease-in;
   }
   .page-exit {
-    transition: opacity 500ms ease-in;
+    transition: opacity 200ms ease-in;
     opacity: 1;
   }
   .page-exit-active {
     opacity: 0;
-    transition: opacity 500ms ease-in;
+    transition: opacity 200ms ease-in;
   }
 
-  .title {
-    font-family: "Montserrat";
-    font-weight: 200;
-}
 
 .page-container {
-  background-color: black;
+  max-height: 100vh;
   width: 100vw;
 }
-#root {
-  height: 100vh;
-  width: 100vw;
-}
+
 
 @import './reset.scss';
 @import '../sass/variables.scss';
@@ -41,9 +42,3 @@
 @import '../pages/Projetos/Projetos.scss';
 
 
-.main-content {
-  max-width: 75%;
-  width: 80%;
-  margin: 0 auto;
-  @include centerAll(center, center);
-}

@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
-import ReactTypingEffect from 'react-typing-effect';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Header from '../Header/Header';
 
-export default function MainView(){
-      const [b, setB] = React.useState(true)
-      const a = '#000'
+export default function MainView(props){
 
         return (
-                <main className="main-content">
-                      <TransitionGroup>
-                        <CSSTransition id="title-text" timeout={1000} in={true} appear={true} classNames="item">
-                              <div id="title-text">
-                                    <div>
-                                          <h1>Seja bem vindo ao meu site</h1>
-                                          <ReactTypingEffect speed={120} eraseDelay={70}  text={
-                                          ["Sou apenas um garoto escrevendo códigos", "Tenho conhecimentos em", "HTML, CSS, SASS, JAVASCRIPT, REACT, NOÇÕES DE UX/UI"]
-                                          } />
-                                    </div>
-                              </div>
-                        </CSSTransition>
-                      </TransitionGroup>
-                </main>
+                  <React.Fragment>
+                        <Header />
+                        <main className={props.mainClass}>
+                              <TransitionGroup>
+                                    <CSSTransition id={props.cssId ? props.cssId : ''} timeout={1000} in={true} appear={true} classNames={props.cssClass ? props.cssClass : ''}>
+                                          {props.children}
+                                    </CSSTransition>
+                              </TransitionGroup>
+                        </main>
+                  </React.Fragment>
         )
 }

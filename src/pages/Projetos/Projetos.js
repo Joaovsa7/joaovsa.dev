@@ -1,30 +1,48 @@
 import React, { Fragment } from 'react';
-import Header from '../Home/Header/Header';
+import MainView from '../Home/MainView/MainView';
 import { Link } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import SiteWrapper from '../Home/siteWrapper/SiteWrapper';
 
 export default function Projetos(){
+    
+    const projects = [
+        {
+            name: 'GITHUBAPP',
+            link: '/projetos/git-app/',
+            id: Math.random(100).toString(26)
+        },
+        {
+            name: 'TODO APP',
+            link: '/projetos/todo-app/',
+            id: Math.random(100).toString(26)
+        },
+        {
+            name: 'PORTAL DE NOTÍCIAS',
+            link: '/projetos/portal-news/',
+            id: Math.random(100).toString(26)
+        }
+    ]
         return (
-                <div className="page-container">
-                    <Header /> 
-                    <TransitionGroup>
-                        <CSSTransition timeout={1000} in={true} appear={true} classNames="item">
-                        <div className="main-content">
-                            <h1 className="title"> Projetos </h1>
+              <SiteWrapper>
+                  <MainView mainClass="main-content projects" id="" cssClass="projects-items">
+                        <div className="wrapper">
+                            <h1 className="title">Projetos</h1>
+                            <p>Aqui estão algumas demonstrações do meu conhecimento na area.
+                                Todos os projetos foram construídos com ReactJS juntamente com o
+                                SASS (processador de CSS).
+                            </p>
                             <div className="cards">
-                                <div className="card-project">
-                                    <Link to="/projetos/git-app/">GITHUB APP</Link>
-                                </div>
-                                <div className="card-project">
-                                    <Link to="/projetos/todo-app/">TODO APP</Link>
-                                </div>
-                                <div className="card-project">
-                                    <Link to="/projetos/portal-news/">PORTAL DE NOTÍCIAS</Link>
-                                </div>
+                                {
+                                    projects.map(({ name, link }) => (
+                                                <div className="card-project">
+                                                    <Link to={link}>{name}</Link>
+                                                </div>
+                                    ))
+                                }
                             </div>
                         </div>
-                        </CSSTransition>
-                        </TransitionGroup>
-                </div>
+                  </MainView>
+              </SiteWrapper>
         )
 }
