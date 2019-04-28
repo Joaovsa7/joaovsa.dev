@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LogoTipo from '../../../../pages/components/Logo/Logo'
+
 
 export default function Logo({href,searchActive, logoPath, target, MobileMenuActive}){
     return ( 
-            <a href={href} className={"webedia_logo" + (searchActive || MobileMenuActive ? ' search_active' : '')} target={target} 
+            <a href={href} className={"portal-news" + (searchActive || MobileMenuActive ? ' search_active' : '')} target={target} 
             rel={`${target ? "noopener noreferrer" : false}`}>
-                <img src={logoPath} alt="Webedia logo"  />
+                <LogoTipo link="/projetos/portal-news" />
             </a>
      );
 }

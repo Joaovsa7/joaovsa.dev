@@ -4,7 +4,7 @@ import Home from './pages/Home/Home';
 import GitHubApp from './projetos/pg/src/GithubApp';
 import TodoList from './projetos/todo_/src/TodoApp'
 import Pesquisa_de_livros from './projetos/pesquisa_de_livros/Pesquisa_de_livros';
-import PortalNews from './projetos/webedia/PortalNews';
+import PortalNews from './projetos/portal-news/PortalNews';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Projetos from './pages/Projetos/Projetos';
 
