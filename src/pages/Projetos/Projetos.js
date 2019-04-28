@@ -34,8 +34,8 @@ export default function Projetos(){
                             </p>
                             <div className="cards">
                                 {
-                                    projects.map(({ name, link }) => (
-                                                <div className="card-project">
+                                    projects.map(({ name, link, id }) => (
+                                                <div className="card-project" key={id}>
                                                     <Link to={link}>{name}</Link>
                                                 </div>
                                     ))

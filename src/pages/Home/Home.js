@@ -9,7 +9,7 @@ export default function Home(){
                 <SiteWrapper bgColor={"black"}>
                     <MainView mainClass="main-content" cssClass="title" cssId="title-text">
                             <div id="title-text">
-                                <h1>Dev <br /> Front end</h1>
+                                <h1>Dev <br /> Front end.</h1>
                                 <span>Oi, seja bem vindo ao meu site.</span>
                            </div> 
                     </MainView>

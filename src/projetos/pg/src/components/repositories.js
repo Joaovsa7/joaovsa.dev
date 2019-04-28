@@ -18,6 +18,7 @@ class Repos extends Component {
     FetchRepositories(){
         const controller = new AbortController()
         const urlTofetch = `https://api.github.com/users/${this.props.state.username}/repos?sort=created`
+        console.log(this.props.state)
         if(this.props.state.username === undefined){
             controller.abort()
             this.setState({error: true})

@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Container = (props) => {
+
+
+
     return(
         <div className="container">
             <div className={`${props.state.msgBox === false ? 'hide' : 'show toAnime'}`}>
@@ -18,7 +21,7 @@ const Container = (props) => {
                         <Link to="/projetos/git-app/">Perfil</Link>
                     </div>
                     <div className={`${props.state.showRep === false ? 'hide' : ''}`}>
-                        <Link to="/projetos/git-app/repos">Repositórios</Link>
+                        <button onClick={props.setView}>Repositórios</button>
                     </div>
                 </nav>
             </div>

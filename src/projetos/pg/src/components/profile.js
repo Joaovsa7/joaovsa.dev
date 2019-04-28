@@ -11,7 +11,7 @@ class Profile extends Component {
 
     render(){
         return(
-               <Container state={this.props.state} estado={this.state} handleChange={this.props.handleChange} toConcat={this.props.toConcat}  fetchData={this.props.fetchData} >
+               <Container setView={this.props.setView} state={this.props.state} estado={this.state} handleChange={this.props.handleChange} toConcat={this.props.toConcat}  fetchData={this.props.fetchData} >
                    <CardUser state={this.props.state}  />
                 </Container>
             )

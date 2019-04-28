@@ -4,7 +4,10 @@ import { Route, Switch } from 'react-router-dom'
 import Repos from './components/repositories';
 
 
+
+
 class GitHubApp extends Component {
+  
   constructor(props){
     super(props)
     this.state = {
@@ -13,6 +16,7 @@ class GitHubApp extends Component {
       msgBox: false,
       showRep: false,
       value: '',
+      search: true
     }
     this.fetchData = this.fetchData.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -21,17 +25,17 @@ class GitHubApp extends Component {
     if(this.state.username === undefined) return false;
     this.fetchData();
   }
-
+  
   backToDefault(){this.setState({user:[{}], value: ''}) }
-
+  
   msgFunction(mensagem){
     this.setState({
       msgBox: true,
       msgInfo: `${mensagem}`,
-      value: ''
+      value: '',
     })
   }
-  async fetchData(){
+  fetchData(){
     const controller = new AbortController();
     this.msgFunction('Carregando...')
     if(this.state.value === ""){
@@ -40,7 +44,7 @@ class GitHubApp extends Component {
       return false
     }
     const urlTofetch = `https://api.github.com/users/${this.state.value}`
-    await fetch(urlTofetch)
+    fetch(urlTofetch)
     .catch(err => {this.msgFunction(err)})
     .then(response => {
       if(response.status === 403){
@@ -53,39 +57,40 @@ class GitHubApp extends Component {
       if(response.status === 200){
         setTimeout(() => {
           response.json()
-          .then(response => { this.setState({ user:[response], showRep: true, msgBox: false})})
+          .then(response => { this.setState({ user:[response], showRep: true, msgBox: false,})})
         }, 2000);
       }
     })
     .catch(err => {this.setState({msgBox: true, msgInfo: `${err}`})});
   }
+  
   handleChange(event){
-      this.setState({
-        value: event.target.value.trim(),
-        username: event.target.value.trim(),
-        msgBox: false,
-      })
-    }
+    this.setState({
+      value: event.target.value.trim(),
+      username: event.target.value.trim(),
+      msgBox: false,
+    })
+  }
+  
+  changeView = () => {
+    this.setState(search => ({ search: !search }))
+  }
 
-  toConcat = (cardUser) => {
-    this.setState(state => ({
-      user: state.user.concat([state]),
-      bigThanTwo: true
-  }))
+
+      render() {
+          return (
+              <React.Fragment> 
+                 {
+                  this.state.search ? 
+                    (
+                      <Profile setView={this.changeView} state={this.state}  handleChange={this.handleChange}  fetchData={this.fetchData} />
+                    ) : (
+                      <Repos state={this.state} />
+                    )
+                 }
+              </React.Fragment>
+        );
+    }
 }
 
-  render() {
-    
-    return (
-            <div className="App"> 
-                      <Route exact path="/projetos/git-app/" render={() => <Profile state={this.state}  handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
-                  } />
-                      <Route exact path="/projetos/git-app/repos/" render={() => <Repos state={this.state} name={this.state.user.name} handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
-                  } />
-            </div>
-        );
-      }
-    }
-
-  export default GitHubApp;
-  
+export default GitHubApp;
