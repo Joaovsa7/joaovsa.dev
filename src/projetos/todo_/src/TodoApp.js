@@ -3,6 +3,7 @@ import Tarefas from './components/tarefas';
 import WrapperComponent from './components/wrapper';
 import FormTarefa from './components/form';
 import TarefasCompletas from './components/tarefas_concluidas';
+import BackToHome from '../../../pages/components/back-to-home-nav/backToHomeNav';
 
 class TodoApp extends Component {
   constructor(props){
@@ -95,6 +96,7 @@ class TodoApp extends Component {
                           <Tarefas state={this.state} quandoMudar={this.quandoMudar} editar={this.editarAtarefa} habilitar={this.habilitarEdicao} tarefaCompleta={this.tarefaCompletada} remover={this.removeTarefa} />
                           <TarefasCompletas state={this.state} undo={this.backToList} />
                       </WrapperComponent>
+                      <BackToHome position="fixed" />
                   </Fragment>
                 );
             }

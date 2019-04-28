@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Profile from './components/profile';
 import { Route, Switch } from 'react-router-dom'
 import Repos from './components/repositories';
+import BackToHome from '../../../pages/components/back-to-home-nav/backToHomeNav';
 
 
 
@@ -88,6 +89,7 @@ class GitHubApp extends Component {
                       <Repos state={this.state} />
                     )
                  }
+                 <BackToHome position="fixed" />
               </React.Fragment>
         );
     }

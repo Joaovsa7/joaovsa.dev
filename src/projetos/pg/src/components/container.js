@@ -25,7 +25,6 @@ const Container = (props) => {
                     </div>
                 </nav>
             </div>
-            <Link to="/" style={{margin: 20}}>Voltar para a home </Link>
        </div>
     )
 }

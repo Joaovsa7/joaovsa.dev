@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import LoadingComponent from '../Loading/Loading';
 import Container from '../Container/Container';
 import ErrorComponent from '../Error/Error';
+import BackToHome from '../../../../pages/components/back-to-home-nav/backToHomeNav';
 
 export default function RequestData(){
 
@@ -71,7 +72,7 @@ export default function RequestData(){
                                 )
                     }
                 </Container>
-                <Footer />
+                <BackToHome />
                 {error.error && <ErrorComponent error={error.error} message={error.msg} reloadPage={error.reload}  /> }
             </Fragment>
     );

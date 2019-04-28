@@ -4,9 +4,8 @@ import SiteWrapper from './siteWrapper/SiteWrapper'
 
 //este componente é o "header" do meu site.
 export default function Home(){
-
             return (
-                <SiteWrapper bgColor={"black"}>
+                <SiteWrapper bgColor="black">
                     <MainView mainClass="main-content" cssClass="title" cssId="title-text">
                             <div id="title-text">
                                 <h1>Dev <br /> Front end.</h1>

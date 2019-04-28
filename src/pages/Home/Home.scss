@@ -9,19 +9,6 @@
         margin: 0 auto;
         width: inherit;
         @include centerAll(space-between, center);
-        > a  {
-            text-decoration: none;
-            > h1 {
-                color: white;
-                width: 60%;
-                padding: 8px;
-                font-family: 'Montserrat';
-                font-size: 2.2em;
-            }
-            &:visited{
-                color: white;
-            }
-        } 
         > ul {
             width: 20%;
             @include centerAll(space-around, center);
@@ -88,6 +75,21 @@
     }
 }
 
+
+
+.logo {
+        text-decoration: none;
+        > h1 {
+            color: white;
+            width: 60%;
+            padding: 8px;
+            font-family: 'Montserrat';
+            font-size: 2.2em;
+        }
+        &:visited{
+            color: white;
+        }
+}
 
 .lfm__typing_effect {
     font-weight: 200;

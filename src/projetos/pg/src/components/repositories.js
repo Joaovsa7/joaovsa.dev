@@ -36,7 +36,6 @@ class Repos extends Component {
         }
     render(){
         return(
-            <div>
                <Container state={this.props.state} estado={this.state}>
                     <div id="repoInfos">
                         {
@@ -65,7 +64,6 @@ class Repos extends Component {
                     
                     }
                 </Container>
-              </div>
         )
     }
 }
