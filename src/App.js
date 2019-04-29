@@ -12,10 +12,7 @@ class App extends Component {
   render() {
     return (
           <Fragment>
-            <Route render={(({ location }) => 
-                   <TransitionGroup>
-                   <CSSTransition classNames="page" timeout={300} key={location.key}>  
-                      <Switch location={location}>
+                      <Switch>
                         <Route exact={ true} path="/" component={Home} />
                         <Route exact={ true} path="/projetos/" component={Projetos} />
                         <Route exact={ true} path="/projetos/git-app/"  component={GitHubApp} />
@@ -23,9 +20,6 @@ class App extends Component {
                         <Route exact={ true} path="/projetos/pesquisa_de_livros" component={Pesquisa_de_livros} />
                         <Route exact={ true} path="/projetos/portal-news" component={PortalNews} />
                       </Switch>
-                   </CSSTransition>
-                 </TransitionGroup> 
-            )} />   
           </Fragment>
       );
     }

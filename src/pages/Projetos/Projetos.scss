@@ -77,8 +77,8 @@
 
 .projects-items-appear {
     opacity: 0;
-    transform: translateY(20%);
-    transition: transform 400ms all;    
+    transform: translateY(-50%);
+    transition: transform 600ms cubic-bezier(.57,.21,.69,3.25);    
 }
 
 .projects-items-enter-active {
@@ -89,7 +89,7 @@
 
 .projects-items-appear-done {
     opacity: 1;
-    transition:  1000ms all;
+    transition:  600ms all;
 }
 
 

@@ -1,33 +1,5 @@
 //componentes e variaveis
 
-
-.page-enter-done {
-  opacity: 1;
-}
-
-
-.page-appear-active {
-opacity: 1;
-transition: opacity 200ms ease-in;
-
-}
-
-.page-enter-active {
-  opacity: 1;
-  overflow: hidden;
-  transition: opacity 200ms ease-in;
-}
-.page-exit {
-  transition: opacity 500ms ease-in;
-  opacity: 0;
-}
-.page-exit-active {
-  background-color: black;
-  opacity: 0;
-  transition: opacity 500ms ease-in;
-}
-
-
 .page-container {
   max-height: 100vh;
   width: 100vw;

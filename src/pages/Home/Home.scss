@@ -25,6 +25,9 @@
             }
         }
     }
+    @media only screen and (max-width: 568px){
+        height: 10vh;
+    }
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700');
@@ -44,22 +47,30 @@
     flex-direction: column;
     #title-text {
         color: white;
-        margin-bottom: 20vh;
+        margin-bottom: 10vh;
         > h1 {
             font-family: "Montserrat";
             font-weight: 600;
-            font-size: 5em;
-            pointer-events: none;
+            font-size: 8em;
+            transition: 1s all;
+            cursor: progress;
+        }
+        > span {
+            margin-left: 8px;
         }
     }
     @media only screen and (max-width: 768px){
+        height: 90vh;
         div {
-            margin: 0 auto; 
+            margin: 0;
             #title-text {
-                margin-bottom: 10vh;
+                margin-bottom: 5vh;
                 h1 {
                     word-break: break-all;
                     font-size: 3.1em;
+                }
+                span {
+                    margin: 0;
                 }
             }
         }
@@ -74,7 +85,6 @@
         }
     }
 }
-
 
 
 .logo {
@@ -142,7 +152,6 @@
 }
 .title-appear-done {
     opacity: 1;
-    pointer-events: none;
     transition:  1000ms all;
 }
 
