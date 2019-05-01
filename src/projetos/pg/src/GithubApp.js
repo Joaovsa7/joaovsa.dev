@@ -17,7 +17,6 @@ class GitHubApp extends Component {
       msgBox: false,
       showRep: false,
       value: '',
-      search: true
     }
     this.fetchData = this.fetchData.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -73,22 +72,14 @@ class GitHubApp extends Component {
     })
   }
   
-  changeView = () => {
-    this.setState(search => ({ search: !search }))
-  }
-
 
       render() {
           return (
               <React.Fragment> 
-                 {
-                  this.state.search ? 
-                    (
-                      <Profile setView={this.changeView} state={this.state}  handleChange={this.handleChange}  fetchData={this.fetchData} />
-                    ) : (
-                      <Repos state={this.state} />
-                    )
-                 }
+                      <Route exact path="/projetos/git-app/home/" render={() => <Profile state={this.state}  handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
+                  } />
+                      <Route exact path="/projetos/git-app/repos/" render={() => <Repos state={this.state} name={this.state.user.name} handleChange={this.handleChange} toConcat={this.toConcat}  fetchData={this.fetchData} />
+                  } />
                  <BackToHome position="fixed" />
               </React.Fragment>
         );

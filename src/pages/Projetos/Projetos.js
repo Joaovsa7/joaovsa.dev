@@ -9,7 +9,7 @@ export default function Projetos(){
     const projects = [
         {
             name: 'GITHUBAPP',
-            link: '/projetos/git-app/',
+            link: '/projetos/git-app/home',
             id: Math.random(100).toString(26)
         },
         {
