@@ -14,10 +14,6 @@ class TodoApp extends Component {
       listaDeTarefas: [],
       tarefasCompletas: [],
     }
-    this.criarTarefa = this.criarTarefa.bind(this)
-    this.habilitarEdicao = this.habilitarEdicao.bind(this)
-    this.editarAtarefa = this.editarAtarefa.bind(this)
-    this.quandoMudar = this.quandoMudar.bind(this)
   }
 
   criarTarefa = () => {
@@ -71,14 +67,14 @@ class TodoApp extends Component {
       }
     })}
 
-    habilitarEdicao(tarefa, id){
+    habilitarEdicao = (tarefa, id) => {
       const lista = this.state.listaDeTarefas
       const item = Object.assign({}, lista[id],{ editTarefa: !tarefa.editTarefa });
       lista[id] = item;
       this.setState({listaDeTarefas: lista, editValue: ''})
      }
      
-    editarAtarefa(id, name){
+    editarAtarefa = (id, name) => {
       const lista = this.state.listaDeTarefas;
       if(name === ""){
         throw alert('O nome da nova tarefa')

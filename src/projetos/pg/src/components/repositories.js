@@ -10,12 +10,11 @@ class Repos extends Component {
             error: false,
             maiorQueSeis: false
         }
-        this.FetchRepositories = this.FetchRepositories.bind(this);
     }
     componentDidMount(){
          this.FetchRepositories()
     }
-    FetchRepositories(){
+    FetchRepositories = () => {
         const controller = new AbortController()
         const urlTofetch = `https://api.github.com/users/${this.props.state.username}/repos?sort=created`
         console.log(this.props.state)

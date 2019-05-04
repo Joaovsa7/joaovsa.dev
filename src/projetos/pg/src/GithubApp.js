@@ -5,10 +5,7 @@ import Repos from './components/repositories';
 import BackToHome from '../../../pages/components/back-to-home-nav/backToHomeNav';
 
 
-
-
-class GitHubApp extends Component {
-  
+class GitHubApp extends Component {  
   constructor(props){
     super(props)
     this.state = {
@@ -18,15 +15,13 @@ class GitHubApp extends Component {
       showRep: false,
       value: '',
     }
-    this.fetchData = this.fetchData.bind(this)
-    this.handleChange = this.handleChange.bind(this)
   }
   componentDidMount(){
     if(this.state.username === undefined) return false;
     this.fetchData();
   }
   
-  backToDefault(){this.setState({user:[{}], value: ''}) }
+  backToDefault(){ this.setState({user:[{}], value: ''}) }
   
   msgFunction(mensagem){
     this.setState({
@@ -35,17 +30,21 @@ class GitHubApp extends Component {
       value: '',
     })
   }
-  fetchData(){
+
+  fetchData = async () => {
+
     const controller = new AbortController();
-    this.msgFunction('Carregando...')
+    const urlTofetch = `https://api.github.com/users/${this.state.value}`
+
     if(this.state.value === ""){
       this.msgFunction('O campo não pode estar vazio')
       controller.abort()
       return false
     }
-    const urlTofetch = `https://api.github.com/users/${this.state.value}`
-    fetch(urlTofetch)
-    .catch(err => {this.msgFunction(err)})
+    
+    this.msgFunction('Carregando...')
+
+    await fetch(urlTofetch)
     .then(response => {
       if(response.status === 403){
         this.msgFunction('Você realizou muitas tentativas erradas, tente novamente em alguns minutos')
@@ -64,7 +63,7 @@ class GitHubApp extends Component {
     .catch(err => {this.setState({msgBox: true, msgInfo: `${err}`})});
   }
   
-  handleChange(event){
+  handleChange = event => {
     this.setState({
       value: event.target.value.trim(),
       username: event.target.value.trim(),

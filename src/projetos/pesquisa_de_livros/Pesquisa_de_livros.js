@@ -5,6 +5,7 @@ import Nav from './componentes/NavBar';
 import Mensagem from './componentes/Mensagem';
 
 const Pesquisa_de_Livros = () => {
+
     const [valor, setValor] = useState('')
     const [url, setUrl] = useState(`https://www.googleapis.com/books/v1/volumes?q=${valor}`)
     const [resultado, setResultado] = useState([])
@@ -24,7 +25,7 @@ const Pesquisa_de_Livros = () => {
     }
 
     function handlingError(msg){
-     setErro({ erro: true , msg: msg})
+      setErro({ erro: true , msg: msg})
       setTimeout(() => {setErro({erro: false})}, 3000)
     }
 
