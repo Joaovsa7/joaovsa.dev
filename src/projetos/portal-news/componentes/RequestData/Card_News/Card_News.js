@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import LoadMoreBtn from './LoadMoreOrLessBtn/LoadMoreOrLessBtn';
+import PaginationComponent from '../Pagination/Pagination'
 
-export default function NewsContainer({ News, country }){
-
+export default function NewsContainer({ News, country, totalPage, requestPagination, fetchParams }){
+    
     const [maxNews, setNewsNumber] = useState(7)
 
     function reduceDescription(description){
@@ -56,7 +56,7 @@ export default function NewsContainer({ News, country }){
     //Como algumas notícias não possuem o autor no json, preciso verificar
     return ( 
             <Fragment>
-                <h1 id="titleCountry">{`As principais notícias ${informCountryToUser(country)}`}</h1>
+                <h1 id="titleCountry">{ `As principais notícias ${informCountryToUser(country)}`}</h1>
                 <section className="News_container">
                     {
                         News.slice(0, maxNews).map(({ author, description, publishedAt, title, url, urlToImage }, index) => (
@@ -73,13 +73,12 @@ export default function NewsContainer({ News, country }){
                             </a>
                             ))    
                     } 
-                    {maxNews > 7 && <LoadMoreBtn text={"Mostrar menos notícias"} onClick={() => setNewsNumber(maxNews - 7)} />}
-                    <LoadMoreBtn onClick={() => setNewsNumber(maxNews + 7)} text={"Mostrar mais notícias"} />
+                    <PaginationComponent totalPage={totalPage} requestPagination={requestPagination} fetchParams={fetchParams} />
                 </section>
             </Fragment>
         );
 }
-        
+      
 // Dados que vou consumir da API
 //author
 //description
