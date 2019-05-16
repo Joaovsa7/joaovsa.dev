@@ -1,6 +1,5 @@
 import React from 'react';
 import SimpleStorage from "react-simple-storage";
-import { Link } from 'react-router-dom'
 
 const WrapperComponent = (props) => {
     return ( 

@@ -53,9 +53,9 @@ class Repos extends Component {
                     </div>
                         {
                             this.state.maiorQueSeis 
-                            ? ( 
+                            ? (
                                 <div id="toMoreRepos">
-                                    <a id="callToAction" href={`https://github.com/${this.props.state.username}?tab=repositories`}  target="_blank" >
+                                    <a id="callToAction" href={`https://github.com/${this.props.state.username}?tab=repositories`}  target="_blank" rel="noopener noreferrer" >
                                     {this.props.state.user.map(user =>  `Veja todos os repositórios de ${user.name === null ? user.login : user.name} no Github`)}
                                     </a>
                                 </div>

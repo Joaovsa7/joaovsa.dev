@@ -1,10 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import PaginationComponent from '../Pagination/Pagination'
 
 export default function NewsContainer({ News, country, totalPage, requestPagination, fetchParams }){
-    
-    const [maxNews, setNewsNumber] = useState(7)
-
     function reduceDescription(description){
         //esta funcao vai reduzir a descricao da noticia quando encontrar o primeiro ponto final
         //caso nao haja nenhuma descricao vindo da api, ela vai sugerir que o usuario clique no titul da noticia para lê-la
@@ -59,7 +56,7 @@ export default function NewsContainer({ News, country, totalPage, requestPaginat
                 <h1 id="titleCountry">{ `As principais notícias ${informCountryToUser(country)}`}</h1>
                 <section className="News_container">
                     {
-                        News.slice(0, maxNews).map(({ author, description, publishedAt, title, url, urlToImage }, index) => (
+                        News.map(({ author, description, publishedAt, title, url, urlToImage }, index) => (
                             <a className={"News"} key={index} href={url} target="_blank" rel="noopener noreferrer">
                                 <div className="imgBox">
                                     <img alt="Imagem da news" src={urlToImage} />

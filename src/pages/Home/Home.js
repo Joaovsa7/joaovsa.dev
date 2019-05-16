@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import MainView from './MainView/MainView';
 import SiteWrapper from './siteWrapper/SiteWrapper'
 

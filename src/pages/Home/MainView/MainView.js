@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Header from '../Header/Header';
 

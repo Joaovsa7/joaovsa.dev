@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import MainView from '../Home/MainView/MainView';
 import { Link } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import SiteWrapper from '../Home/siteWrapper/SiteWrapper';
 
 export default function Projetos(){
