@@ -12,14 +12,20 @@ const Layout = ({ children }) => {
   // e a funcaoq  vai modificar o meu tema setBlackTheme
   const theme = {
     dark: {
-      primaryColor: '#000a12',
-      secondaryColor: '#fff',
-      btnColor: '#EDBB21'
+      backgroundColor: '#000a12',
+      primaryColor: '#eee',
+      yellow: '#f9a825',
+      blue: '#004ba0',
+      red: '#b71c1c',
+      gray: '#757575'
     },
+
     light: {
-      primaryColor: '#fff',
-      secondaryColor: '#000a12',
-      btnColor: '#000a12'
+      backgroundColor: '#fff',
+      primaryColor: '#000a12',
+      yellow: '#ece071',
+      red: '#e67b59',
+      gray: '#1f1f1f'
     }
   };
 
