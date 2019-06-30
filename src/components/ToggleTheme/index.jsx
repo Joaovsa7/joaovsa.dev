@@ -5,7 +5,7 @@ import { Button } from "./style"
 const ToggleButon = () => {
   const [theme, setTheme] = useContext(ThemeContext)
   return (
-        <Button onClick={() => setTheme(!theme)}> Mudar as cores </Button>
+        <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}> Mudar as cores </Button>
   )
 }
 

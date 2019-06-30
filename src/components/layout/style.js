@@ -9,5 +9,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   background-color: ${({ theme }) =>
-    theme.primaryColor && theme.primaryColor};
+    theme.primaryColor};
+    transition: background-color 0.5s ease-in-out;
 `;

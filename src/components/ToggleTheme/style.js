@@ -5,7 +5,8 @@ export const Button = styled.button`
   width: 100%;
   min-height: 50px;
   margin-top: 10px;
-  background-color: ${({ theme }) => theme.btnColor && theme.btnColor};
+  background-color: ${({ theme }) => theme.btnColor};
+  transition: background-color 0.5s ease-in-out;
   color: white;
   cursor: pointer;
 `;
