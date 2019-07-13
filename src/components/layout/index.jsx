@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from './style';
+import { Wrapper, Grid } from './style';
 import { GlobalStyle } from '../../../globalStyle';
 import { ThemeProvider } from 'styled-components';
 import ThemeContext from '../Theme/ThemeContext';
+import Header from '../Header';
 
 // children é as divs que serão filhas desse jsx
 const Layout = ({ children }) => {
@@ -40,7 +41,10 @@ const Layout = ({ children }) => {
       <ThemeContext.Provider value={[themeName, setTheme]}>
         <Wrapper>
           <GlobalStyle />
-          {children}
+          <Grid>
+            <Header />
+            {children}
+          </Grid>
         </Wrapper>
       </ThemeContext.Provider>
     </ThemeProvider>

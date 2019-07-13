@@ -21,13 +21,6 @@ const SwitchTheme = () => {
       >
         <SwitchThemeCircle themeName={theme} />
       </SwitchThemeContainer>
-      {toolTip && (
-        <SwitchThemeToolTip themeName={theme}>
-          {' '}
-          Você está usando o tema {theme}, <br /> clique para mudar para o tema{' '}
-          {theme === 'light' ? 'dark' : 'light'}
-        </SwitchThemeToolTip>
-      )}
     </SwitchThemeWrapper>
   );
 };

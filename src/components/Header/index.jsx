@@ -1,10 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { HeaderContainer } from './style';
+import { HeaderContainer, MenuAndSwitchThemeWrapper } from './style';
+import { Logo } from '../Logo';
+import Menu from '../Menu';
 
-const Header = ({ children }) => <HeaderContainer>{children}</HeaderContainer>;
+const Header = () => (
+  <HeaderContainer>
+    <Logo />
+    <Menu />
+  </HeaderContainer>
+);
 
-Header.propTypes = {
-  children: PropTypes.node.isRequired
-}
 export default Header;

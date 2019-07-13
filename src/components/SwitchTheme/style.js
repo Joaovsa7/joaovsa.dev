@@ -6,15 +6,16 @@ export const SwitchThemeWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  margin-bottom:10px;
 `;
 
 export const SwitchThemeContainer = styled.div`
   max-width: 40px;
   width: 100%;
   position: relative;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({ theme }) => theme.backgroundColor};
   border-radius: 100px;
   min-height: 17px;
   max-height: 17px;
@@ -29,7 +30,7 @@ export const SwitchThemeCircle = styled.div`
   min-height: 14px;
   max-height: 14px;
   width: 14px;
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: ${({ theme }) => theme.primaryColor};
   position: absolute;
   left: ${({ themeName }) => (themeName === 'dark' ? '2px' : '21px')};
   border-radius: 100px;
