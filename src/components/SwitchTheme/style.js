@@ -11,13 +11,13 @@ export const SwitchThemeWrapper = styled.div`
 `;
 
 export const SwitchThemeContainer = styled.div`
-  max-width: 50px;
+  max-width: 40px;
   width: 100%;
   position: relative;
   background-color: ${({ theme }) => theme.primaryColor};
   border-radius: 100px;
-  min-height: 25px;
-  max-height: 25px;
+  min-height: 17px;
+  max-height: 17px;
   display: flex;
   align-items: center;
   transition: background-color 0.5s ease-in-out;
@@ -26,12 +26,12 @@ export const SwitchThemeContainer = styled.div`
 `;
 
 export const SwitchThemeCircle = styled.div`
-  min-height: 20px;
-  max-height: 20px;
-  width: 20px;
+  min-height: 14px;
+  max-height: 14px;
+  width: 14px;
   background-color: ${({ theme }) => theme.backgroundColor};
   position: absolute;
-  left: ${({ themeName }) => (themeName === 'dark' ? '5px' : '25px')};
+  left: ${({ themeName }) => (themeName === 'dark' ? '2px' : '21px')};
   border-radius: 100px;
   transition: background-color 0.5s linear;
   transition: left 0.5s linear;

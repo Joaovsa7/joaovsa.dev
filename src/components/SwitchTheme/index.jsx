@@ -14,16 +14,17 @@ const SwitchTheme = () => {
   return (
     <SwitchThemeWrapper>
       <SwitchThemeContainer
-        onMouseEnter={() => showToolTip(true)}
-        onMouseLeave={() => showToolTip(false)}
+        themeName={theme}
+        onMouseEnter={() => showToolTip(!toolTip)}
+        onMouseLeave={() => showToolTip(!toolTip)}
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       >
         <SwitchThemeCircle themeName={theme} />
       </SwitchThemeContainer>
       {toolTip && (
-        <SwitchThemeToolTip themeName={theme} toolTip={toolTip}>
+        <SwitchThemeToolTip themeName={theme}>
           {' '}
-          Você está usando o tema {theme}, < br /> clique para mudar para o tema{' '}
+          Você está usando o tema {theme}, <br /> clique para mudar para o tema{' '}
           {theme === 'light' ? 'dark' : 'light'}
         </SwitchThemeToolTip>
       )}

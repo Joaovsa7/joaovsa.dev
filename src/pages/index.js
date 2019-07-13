@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import Image from '../components/image';
 import SEO from '../components/seo';
 import Layout from '../components/layout/index';
 import { Logo } from '../components/Logo/index';
-import ToggleButon from '../components/ToggleTheme';
 import SwitchTheme from '../components/SwitchTheme';
+import Header from '../components/Header';
 
 const IndexPage = () => {
   return (
     <Layout>
       <SEO title='Home' keywords={[`gatsby`, `application`, `react`]} />
-      <Logo />
-      <SwitchTheme />
+      <Header>
+        <Logo />
+        <SwitchTheme />
+      </Header>
     </Layout>
   );
 };

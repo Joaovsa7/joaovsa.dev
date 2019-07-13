@@ -15,8 +15,10 @@ const Layout = ({ children }) => {
       backgroundColor: '#000a12',
       primaryColor: '#eee',
       yellow: '#f9a825',
-      blue: '#004ba0',
+      darkBlue: '#004ba0',
+      blue: '#488DE8',
       red: '#b71c1c',
+      yellow: '#F7FF82',
       gray: '#757575'
     },
 
@@ -24,6 +26,7 @@ const Layout = ({ children }) => {
       backgroundColor: '#fff',
       primaryColor: '#000a12',
       yellow: '#ece071',
+      blue: '#488DE8',
       red: '#e67b59',
       gray: '#1f1f1f'
     }
