@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderContainer, MenuAndSwitchThemeWrapper } from './style';
+import { HeaderContainer } from './style';
 import { Logo } from '../Logo';
 import Menu from '../Menu';
 

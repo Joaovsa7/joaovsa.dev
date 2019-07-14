@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
+import Fade from 'react-reveal/Fade';
 import { Link } from 'gatsby';
 import {
   MenuButtonContainer,
@@ -15,11 +16,6 @@ const Menu = () => {
     setOpen(!open);
   };
 
-  const userAreOnIndexPage = () => {
-    const actualUrl = window.location.href;
-    if (actualUrl.includes('sobre')) return false;
-    return true;
-  };
 
   return (
     <>
@@ -31,8 +27,8 @@ const Menu = () => {
       {open && (
         <InsideMenu>
           <InsideMenuContainer>
-            <Link to={userAreOnIndexPage() ? '/sobre' : '/'}>
-              {userAreOnIndexPage() ? 'Sobre' : 'Início'}{' '}
+            <Link to='/sobre'>
+              Sobre
             </Link>
           </InsideMenuContainer>
           <SwitchTheme />
