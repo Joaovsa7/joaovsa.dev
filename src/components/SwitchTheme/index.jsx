@@ -10,27 +10,28 @@ const SwitchTheme = () => {
   const [theme, setTheme] = useContext(ThemeContext);
   const [toolTip, showToolTip] = useState(false);
 
+  const actualTheme = localStorage.getItem('theme');
+
   const onToggleTheme = () => {
-    console.log(theme)
-    const actualTheme = localStorage.getItem('theme');
-    if (actualTheme === 'light') {
-      setTheme('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      setTheme('light');
-      localStorage.setItem('theme', 'light');
+    if (actualTheme == 'light') {
+      setTheme('dark')
+      return localStorage.setItem('theme', 'dark');
+    }
+    if (actualTheme == 'dark') {
+      setTheme('light')
+      return localStorage.setItem('theme', 'light');
     }
   };
 
   return (
     <SwitchThemeWrapper>
       <SwitchThemeContainer
-        themeName={theme}
+        themeName={actualTheme}
         onMouseEnter={() => showToolTip(!toolTip)}
         onMouseLeave={() => showToolTip(!toolTip)}
         onClick={() => onToggleTheme()}
       >
-        <SwitchThemeCircle themeName={theme} />
+        <SwitchThemeCircle themeName={actualTheme} />
       </SwitchThemeContainer>
     </SwitchThemeWrapper>
   );
