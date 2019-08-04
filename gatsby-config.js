@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Joaovsa.dev`,
-    description: `Desenvolvedor front end com foco em javascript.`,
+    description: `Desenvolvedor front-end apaixonado por javascript.`,
     author: `@blakenoll and @joaovsa7`,
   },
   plugins: [

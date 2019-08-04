@@ -6,11 +6,10 @@ import { ThemeProvider } from 'styled-components';
 import ThemeContext from '../Theme/ThemeContext.jsx';
 import Header from '../Header';
 
-// children é as divs que serão filhas desse jsx
 const Layout = ({ children }) => {
+
   const [themeName, setThemeName] = useState(null);
-  // aqui no meu layout, eu to definindo um tema default (blackTheme)
-  // e a funcaoq  vai modificar o meu tema setBlackTheme
+
   const theme = {
     dark: {
       backgroundColor: '#000a12',

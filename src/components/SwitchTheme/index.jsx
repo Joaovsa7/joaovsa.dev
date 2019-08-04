@@ -1,14 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { SwitchThemeContainer, SwitchThemeCircle, SwitchThemeWrapper } from './style';
 import ThemeContext from '../Theme/ThemeContext';
 
 const SwitchTheme = () => {
   const [theme, setTheme] = useContext(ThemeContext);
 
-  const actualTheme = localStorage.getItem('theme');
+  const actualTheme = localStorage.getItem('theme') || theme;
 
   const onToggleTheme = () => {
-    if (actualTheme == 'light') {
+    if (actualTheme === 'light') {
       setTheme('dark');
       return localStorage.setItem('theme', 'dark');
     }
