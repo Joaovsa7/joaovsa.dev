@@ -1,36 +1,24 @@
 import React, { useContext, useState, useEffect } from 'react';
-import {
-  SwitchThemeContainer,
-  SwitchThemeCircle,
-  SwitchThemeWrapper
-} from './style';
+import { SwitchThemeContainer, SwitchThemeCircle, SwitchThemeWrapper } from './style';
 import ThemeContext from '../Theme/ThemeContext';
 
 const SwitchTheme = () => {
   const [theme, setTheme] = useContext(ThemeContext);
-  const [toolTip, showToolTip] = useState(false);
 
   const actualTheme = localStorage.getItem('theme');
 
   const onToggleTheme = () => {
     if (actualTheme == 'light') {
-      setTheme('dark')
+      setTheme('dark');
       return localStorage.setItem('theme', 'dark');
     }
-    if (actualTheme == 'dark') {
-      setTheme('light')
+      setTheme('light');
       return localStorage.setItem('theme', 'light');
-    }
   };
 
   return (
     <SwitchThemeWrapper>
-      <SwitchThemeContainer
-        themeName={actualTheme}
-        onMouseEnter={() => showToolTip(!toolTip)}
-        onMouseLeave={() => showToolTip(!toolTip)}
-        onClick={() => onToggleTheme()}
-      >
+      <SwitchThemeContainer themeName={actualTheme} onClick={onToggleTheme}>
         <SwitchThemeCircle themeName={actualTheme} />
       </SwitchThemeContainer>
     </SwitchThemeWrapper>

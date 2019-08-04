@@ -8,7 +8,7 @@ import Header from '../Header';
 
 // children é as divs que serão filhas desse jsx
 const Layout = ({ children }) => {
-  const [themeName, setTheme] = useState('');
+  const [themeName, setThemeName] = useState(null);
   // aqui no meu layout, eu to definindo um tema default (blackTheme)
   // e a funcaoq  vai modificar o meu tema setBlackTheme
   const theme = {
@@ -34,24 +34,21 @@ const Layout = ({ children }) => {
 
   const getThemeInLocalStorage = () => {
     const actualTheme = localStorage.getItem('theme');
-    console.log(actualTheme, )
+    if(!actualTheme) return theme.light;
     if (actualTheme === 'light') return theme.light;
     if (actualTheme === 'dark') return theme.dark;
   };
 
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
-      const defaultTheme = localStorage.setItem('theme', 'dark');
-      setTheme(defaultTheme);
+      const defaultTheme = localStorage.setItem('theme', 'light');
+      setThemeName(defaultTheme);
     }
   }, []);
 
   return (
-    <ThemeProvider theme={() => getThemeInLocalStorage()}>
-      {/* aqui no ThemeContextProvider, ele fornece o contexto
-       para o meu "estado" de contexto  e o valor é o que eu passo, meu estado
-        e a funcao q vai modificar meu estado  */}
-      <ThemeContext.Provider value={[themeName, setTheme]}>
+    <ThemeProvider theme={getThemeInLocalStorage}>
+      <ThemeContext.Provider value={[themeName, setThemeName]}>
         <Wrapper>
           <GlobalStyle />
           <Grid>
