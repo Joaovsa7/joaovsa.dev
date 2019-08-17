@@ -1,25 +1,16 @@
 import React, { useContext } from 'react';
 import { SwitchThemeContainer, SwitchThemeCircle, SwitchThemeWrapper } from './style';
-import ThemeContext from '../Theme/ThemeContext';
+import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
+
 
 const SwitchTheme = () => {
-  const [theme, setTheme] = useContext(ThemeContext);
-
-  const actualTheme = localStorage.getItem('theme') || theme;
-
-  const onToggleTheme = () => {
-    if (actualTheme === 'light') {
-      setTheme('dark');
-      return localStorage.setItem('theme', 'dark');
-    }
-      setTheme('light');
-      return localStorage.setItem('theme', 'light');
-  };
+  const themeContext = useContext(ThemeManagerContext);
+  const toggleTheme = () => themeContext.toggleDark();
 
   return (
     <SwitchThemeWrapper>
-      <SwitchThemeContainer themeName={actualTheme} onClick={onToggleTheme}>
-        <SwitchThemeCircle themeName={actualTheme} />
+      <SwitchThemeContainer dark={themeContext} onClick={() => toggleTheme()}>
+        <SwitchThemeCircle dark={themeContext} />
       </SwitchThemeContainer>
     </SwitchThemeWrapper>
   );

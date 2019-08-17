@@ -32,7 +32,7 @@ export const SwitchThemeCircle = styled.div`
   width: 14px;
   background-color: ${({ theme }) => theme.primaryColor};
   position: absolute;
-  left: ${({ themeName }) => (themeName === 'dark' ? '2px' : '21px')};
+  left: ${({ dark }) => (dark.isDark  ? '2px' : '21px')};
   border-radius: 100px;
   transition: background-color 0.5s linear;
   transition: left 0.5s linear;
@@ -45,7 +45,7 @@ export const SwitchThemeToolTip = styled.p`
   border-radius: 4px;
   top: 40px;
   text-align: center;
-  color: ${({ themeName }) => (themeName === 'dark' ? 'black' : 'white')};
+  color: ${({ dark }) => (dark.isDark ? 'black' : 'white')};
   font-weight: bold;
   font-size: 0.7rem;
   padding: 5px;

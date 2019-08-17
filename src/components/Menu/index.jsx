@@ -6,7 +6,6 @@ import SwitchTheme from '../SwitchTheme';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => setOpen(!open);
   const ref = useRef();
   useOnClickOutside(ref, () => setOpen(false));
