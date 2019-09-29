@@ -15,7 +15,7 @@ export const SwitchThemeContainer = styled.div`
   max-width: 40px;
   width: 100%;
   position: relative;
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: #000a12;
   border-radius: 100px;
   min-height: 17px;
   max-height: 17px;
@@ -30,9 +30,8 @@ export const SwitchThemeCircle = styled.div`
   min-height: 14px;
   max-height: 14px;
   width: 14px;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: #eee;
   position: absolute;
-  left: ${({ dark }) => (dark.isDark  ? '2px' : '21px')};
   border-radius: 100px;
   transition: background-color 0.5s linear;
   transition: left 0.5s linear;
@@ -41,7 +40,7 @@ export const SwitchThemeCircle = styled.div`
 export const SwitchThemeToolTip = styled.p`
   position: absolute;
   width: 100%;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: #eee;
   border-radius: 4px;
   top: 40px;
   text-align: center;

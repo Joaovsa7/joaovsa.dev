@@ -29,30 +29,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-styled-components`,
-    },
-    {
-      resolve: `gatsby-styled-components-dark-mode`,
-      options: {
-        light: {
-          backgroundColor: '#fff',
-          primaryColor: '#000a12',
-          blue: '#488DE8',
-          red: '#e67b59',
-          gray: '#1f1f1f',
-          yellow: '#ece071',
-        },
-        dark: {
-          backgroundColor: '#000a12',
-          primaryColor: '#eee',
-          darkBlue: '#004ba0',
-          blue: '#488DE8',
-          red: '#b71c1c',
-          yellow: '#F7FF82',
-          gray: '#757575',
-        }
-      },
-    },
-
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

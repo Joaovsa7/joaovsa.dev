@@ -10,6 +10,7 @@ export const PageWrapper = styled.div`
   color: ${({ theme }) => theme.primaryColor};
   h1 {
     font-size: 2.5rem;
+    color: #eee;
     @media screen and (min-width: 768px) {
       font-size: 4rem;
     }

@@ -1,13 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper, Grid } from './style';
 import { GlobalStyle } from '../../../globalStyle';
 import Header from '../Header';
-import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
-const Layout = ({ children }) => {
-
-  return (
+const Layout = ({ children }) =>  (
     <>
       <Wrapper>
         <GlobalStyle />
@@ -17,8 +14,7 @@ const Layout = ({ children }) => {
         </Grid>
       </Wrapper>
     </>
-  );
-};
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

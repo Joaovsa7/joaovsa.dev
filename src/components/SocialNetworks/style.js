@@ -15,13 +15,13 @@ export const Anchor = styled.a`
   text-decoration: none;
   outline: none;
   &:visited {
-    color: ${({ theme }) => theme.primaryColor};
+    color: #eee;
   }
   svg {
-    fill: ${({ theme }) => theme.primaryColor};
+    fill: #eee;
     font-size: 24px;
     &:hover {
-      fill: ${({ theme }) => theme.blue};
+      fill: #488DE8;
     }
   }
 `;

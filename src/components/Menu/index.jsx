@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'gatsby';
 import { MenuButtonContainer, MenuButtonLine, InsideMenu, InsideMenuContainer } from './style';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
-import SwitchTheme from '../SwitchTheme';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
@@ -22,7 +21,7 @@ const Menu = () => {
           <InsideMenuContainer>
             <Link to='/sobre'>Sobre</Link>
           </InsideMenuContainer>
-          <SwitchTheme />
+          {/* <SwitchTheme /> */}
         </InsideMenu>
       )}
     </>

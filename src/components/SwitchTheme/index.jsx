@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { SwitchThemeContainer, SwitchThemeCircle, SwitchThemeWrapper } from './style';
-import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
 
 const SwitchTheme = () => {

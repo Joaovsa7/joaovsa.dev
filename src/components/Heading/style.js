@@ -8,7 +8,7 @@ export const Container = styled.main`
   justify-content: center;
   flex-direction: column;
   p {
-    color: ${({ theme }) => theme.primaryColor};
+    color:#eee;
     text-align: left;
   }
 `;

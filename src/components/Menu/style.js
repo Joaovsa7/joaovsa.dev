@@ -5,7 +5,7 @@ export const MenuButtonContainer = styled.div`
   min-width: 40px;
   max-height: 40px;
   min-height: 40px;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: #eee;
   border-radius: 100px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -18,7 +18,7 @@ export const MenuButtonContainer = styled.div`
 export const MenuButtonLine = styled.div`
   height: 2px;
   width: 50%;
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: #000a12;
   border-radius: 4px;
   &:nth-child(2) {
     margin: 4px 0px;
@@ -31,7 +31,7 @@ export const InsideMenu = styled.nav`
   max-width: 170px;
   width: 100%;
   border-radius: 4px;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: #eee;
   right: 0;
 `;
 
@@ -41,7 +41,7 @@ export const InsideMenuContainer = styled.div`
   justify-content: space-around;
   flex-direction: column;
   > a {
-    color: ${({ theme }) => theme.backgroundColor};
+    color: #000a12;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
@@ -50,3 +50,4 @@ export const InsideMenuContainer = styled.div`
     }
   }
 `;
+

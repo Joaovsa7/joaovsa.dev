@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: #000a12;
   transition: background-color 0.5s ease-in-out;
   display: flex;
   align-items: center;

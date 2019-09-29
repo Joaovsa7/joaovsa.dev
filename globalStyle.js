@@ -14,6 +14,9 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     border: none;
   }
+  p {
+    color: #eee;
+  }
   html {
     font-family: Montserrat;
     -ms-text-size-adjust: 100%;
