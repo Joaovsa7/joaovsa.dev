@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: gatsby-migraton
+  branch: master
   accept_roles: #optional - accepts all users if left out
     - admin
     - editor
