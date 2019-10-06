@@ -1,23 +1,35 @@
 backend:
   name: git-gateway
+  repo: joaovsa7/joaovsa.dev
   branch: master
-  accept_roles: #optional - accepts all users if left out
-    - admin
-    - editor
-publish_mode: editorial_workflow
-media_folder: static/images/uploads # Media files will be stored in the repo under static/images/uploads
-public_folder: /images/uploads # The src attribute for uploaded media will begin with /images/uploads
-
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "_posts/blog" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: city_pages
+    label: City Pages
+    label_singular: City Page
+    identifier_field: de.title
+    folder: data/city_pages/
+    extension: yml
+    create: true
+    preview_path: "stadt/{{slug}}"
+    fields:
+      - { label: Title (DE),       name: de.title,       widget: string, required: true }
+      - { label: Title (EN),       name: en.title,       widget: string, required: true }
+      - { label: Description (DE), name: de.description, widget: text,   required: true }
+      - { label: Description (EN), name: en.description, widget: text,   required: true }
+      - { label: Tagline (DE),     name: de.tagline,     widget: string, required: true }
+      - { label: Tagline (EN),     name: en.tagline,     widget: string, required: true }
+
+  - name: jobs
+    label: Jobs
+    label_singular: Job
+    folder: data/jobs/
+    extension: yml
+    create: true
+    preview_path: "jobs/{{slug}}"
+    fields:
+      - { label: Title,       name: title,       widget: string, required: true }
+      - { label: Date,        name: date,        widget: date,   required: true, format: 'YYYY-MM-DD' }
+      - { label: Description, name: description, widget: text,   required: true }
