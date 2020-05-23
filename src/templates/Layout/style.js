@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #000a12;
-  transition: background-color 0.5s ease-in-out;
+  background-color: #fff;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,9 +12,9 @@ export const Wrapper = styled.div`
 export const Grid = styled.div`
   position: relative;
   width: 90%;
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   @media screen and (min-width: 1366px) {
     max-width: 1140px;

@@ -1,8 +1,6 @@
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
-// criando um css global para a aplicação 
-
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
   * {
     box-sizing: border-box;
@@ -25,3 +23,5 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 `;
+
+export default GlobalStyle;
