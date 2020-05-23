@@ -12,7 +12,7 @@ const SocialNetworks: React.FC = () => (
       <FaGithub />
     </Anchor>
     <Anchor
-      href="https://www.twitter.com/jvsa7"
+      href="https://www.twitter.com/jvsa7_"
       rel="noopener noreferer"
       target="blank"
     >
