@@ -4,7 +4,7 @@ module.exports = {
     description: `Desenvolvedor front-end apaixonado por javascript.`,
     author: `@joaovsa7`,
     url: "https://www.joaovsa.dev",
-    image: `${__dirname}/src/assets/images/profile-picture.png`,
+    image: `https://www.joaovsa.dev/static/profile-picture-18a5c883d583be0cf7bd792b42ad8ae9.png`,
     social: {
       twitter: "jvsa7_",
       linkedin: "joaovsa7",

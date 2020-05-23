@@ -26,13 +26,17 @@ const SEO: React.FC<Props> = ({
       render={(data) => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+
+        const pageTitle = title || data.site.siteMetadata.title;
+        const ogImage = image || data.site.siteMetadata.image;
+
         return (
           <>
             <Helmet
               htmlAttributes={{
                 lang,
               }}
-              title={title}
+              title={pageTitle}
               titleTemplate={`%s | ${data.site.siteMetadata.title}`}
               meta={[
                 {
@@ -41,11 +45,15 @@ const SEO: React.FC<Props> = ({
                 },
                 {
                   property: `og:image`,
-                  content: image,
+                  content: ogImage,
                 },
                 {
                   property: `og:title`,
                   content: title,
+                },
+                {
+                  property: `og:image`,
+                  content: data.site.siteMetadata.url,
                 },
                 {
                   property: `og:description`,
@@ -113,6 +121,7 @@ const detailsQuery = graphql`
         description
         author
         image
+        url
         social {
           twitter
         }
