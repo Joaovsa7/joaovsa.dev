@@ -27,8 +27,8 @@ const SEO: React.FC<Props> = ({
         const metaDescription =
           description || data.site.siteMetadata.description;
 
-        const pageTitle = title || data.site.siteMetadata.title;
         const ogImage = image || data.site.siteMetadata.image;
+        const pageTitle = title || data.site.siteMetadata.title;
 
         return (
           <>
