@@ -8,7 +8,7 @@ const Resume: React.FC = () => (
   <ResumeWrapper>
     <Avatar />
     <Logo />
-    <JobTitle>Desenvolvedor de Software</JobTitle>
+    <JobTitle>Desenvolvedor de Software.</JobTitle>
     <SocialNetworks />
   </ResumeWrapper>
 );
