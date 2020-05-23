@@ -47,5 +47,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typescript`,
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-167422547-1",
+        head: true,
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        pageTransitionDelay: 0,
+        defer: true,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "joaovsa.dev",
+      },
+    },
   ],
 };
