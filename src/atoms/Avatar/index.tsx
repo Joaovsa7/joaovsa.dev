@@ -25,26 +25,27 @@ const Overlay = styled.div`
   &::after {
     content: "";
     position: absolute;
-    height: 20px;
+    height: 21px;
     width: 2px;
     bottom: 25px;
     background: white;
-    left: 53%;
+    left: 54%;
     transform: rotate(45deg);
   }
 
   &::before {
     content: "";
     position: absolute;
-    height: 20px;
+    height: 21px;
     width: 2px;
     bottom: 25px;
     background: white;
-    right: 53%;
+    right: 52%;
     transform: rotate(-45deg);
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     opacity: 1;
     transition: 0.3s opacity linear;
     pointer-events: all;
