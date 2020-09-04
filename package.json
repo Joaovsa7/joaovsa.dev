@@ -11,7 +11,7 @@
     "@pusher/chatkit-server": "^1.1.0",
     "axios": "^0.18.0",
     "node-fetch": "^2.3.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "react": "^16.8.0-alpha.0",
     "react-dom": "^16.8.0-alpha.0",
     "react-router-dom": "^5.0.0",
